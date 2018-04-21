@@ -27,8 +27,9 @@ public class PlayerControl : MonoBehaviour {
             shootingTime = (Time.time - mouseDownTime) * 5;
             PositionArrow(Input.mousePosition, shootingTime);
         }
+        bool playerIsMoving = PlayerIsMoving();
         // Clic gauche
-        if (Input.GetMouseButtonDown(0) && !PlayerIsMoving())
+        if (Input.GetMouseButtonDown(0) && !playerIsMoving)
         {
             mouseDownTime = Time.time;
             currentArrow = GameObject.Instantiate(arrowPrefab, ball.transform.position, Quaternion.identity);
@@ -36,11 +37,16 @@ public class PlayerControl : MonoBehaviour {
             currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
         }
         // Clic droit
-        if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !PlayerIsMoving())
+        if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !playerIsMoving)
         {
-            ShootBall(Input.mousePosition, shootingTime);
             Destroy(currentArrow);
             mouseDownTime = 0;
+            ShootBall(Input.mousePosition, shootingTime);
+        }
+        // Teleportation
+        if (!playerIsMoving)
+        {
+            TeleportPlayer();
         }
     }
 
@@ -57,6 +63,8 @@ public class PlayerControl : MonoBehaviour {
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
+        // Effet sonore
+        ball.GetComponent<AudioSource>().Play();
         // Incrémentation du score
         gameObject.GetComponent<GameBehavior>().IncrementScore();
     }
@@ -68,8 +76,6 @@ public class PlayerControl : MonoBehaviour {
         Vector2 localMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         currentArrow.transform.rotation = Quaternion.FromToRotation(Vector3.right, localMousePosition - new Vector2(ball.transform.position.x, ball.transform.position.y));
         currentArrow.transform.position = ball.transform.position + currentArrow.transform.rotation * (new Vector2(0.5f, 0f));
-        // Rotate the character
-        RotatePlayer(currentArrow.transform.eulerAngles.z);
         // Fill up the power bar
         GameObject[] arrowFillers = GameObject.FindGameObjectsWithTag("ArrowFiller");
         foreach(GameObject arrowFiller in arrowFillers)
@@ -80,6 +86,8 @@ public class PlayerControl : MonoBehaviour {
                 fillerImage.fillAmount = (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1) / 2f;
             }
         }
+        // Rotate the character
+        RotatePlayer(currentArrow.transform.eulerAngles.z);
     }
 
     private bool PlayerIsMoving()
@@ -96,6 +104,6 @@ public class PlayerControl : MonoBehaviour {
 
     private void TeleportPlayer()
     {
-        character.transform.position = ball.transform.position;
+        character.transform.position = ball.transform.position + new Vector3(0, -ball.GetComponent<CircleCollider2D>().bounds.size.y/2);
     }
 }

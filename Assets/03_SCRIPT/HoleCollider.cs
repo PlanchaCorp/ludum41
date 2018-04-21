@@ -6,7 +6,8 @@ public class HoleCollider : MonoBehaviour {
 
     public Canvas canvas;
 
-   
+  
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.tag);
