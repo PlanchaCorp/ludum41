@@ -44,7 +44,6 @@ public class PlayerControl : MonoBehaviour {
         // Calcul des distances
         float horizontalDistance = Camera.main.ScreenToWorldPoint(mousePosition).x - ball.transform.position.x;
         float verticalDistance = Camera.main.ScreenToWorldPoint(mousePosition).y - ball.transform.position.y;
-        float distance = Mathf.Sqrt(Mathf.Pow(horizontalDistance, 2) + Mathf.Pow(verticalDistance, 2));
         // Application de la fonction sinus
         float horizontalForce = BALL_FORCE * horizontalDistance * (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1);
         float verticalForce = BALL_FORCE * verticalDistance * (Mathf.Sin(elapsedTime + 3 * Mathf.PI/2) + 1);
