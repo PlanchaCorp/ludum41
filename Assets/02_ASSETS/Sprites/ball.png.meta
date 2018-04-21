@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: b0ccdf5317ac3c746bb2e604e7bde327
-timeCreated: 1524293526
-=======
-guid: 2bf7a6e685583bf449da08fa8c842afc
-timeCreated: 1524291962
->>>>>>> acb58e7c6dee562534b27debbfbaa7358b327a3b
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -37,15 +30,15 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
 <<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> acb58e7c6dee562534b27debbfbaa7358b327a3b
+=======
+    filterMode: -1
+>>>>>>> c3d02c502e0c71afd7fc1d1c277f556e9796e116
     aniso: -1
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -55,13 +48,13 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+=======
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-=======
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 16
->>>>>>> acb58e7c6dee562534b27debbfbaa7358b327a3b
+>>>>>>> c3d02c502e0c71afd7fc1d1c277f556e9796e116
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -76,10 +69,10 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
 <<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
->>>>>>> acb58e7c6dee562534b27debbfbaa7358b327a3b
+=======
+    textureCompression: 1
+>>>>>>> c3d02c502e0c71afd7fc1d1c277f556e9796e116
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,10 +83,20 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
 <<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
->>>>>>> acb58e7c6dee562534b27debbfbaa7358b327a3b
+=======
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+>>>>>>> c3d02c502e0c71afd7fc1d1c277f556e9796e116
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

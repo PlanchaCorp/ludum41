@@ -5,10 +5,10 @@ using UnityEngine;
 public class HoleCollider : MonoBehaviour {
 
 
-     void OnTriggerEnter(Collider other)
+     void OnTriggerEnter2D(Collider2D other)
     {
-
-        Debug.Log("test");
+        
+        Debug.Log(other.tag);
     }
 
 
