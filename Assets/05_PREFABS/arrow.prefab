@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4830408042449582}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_Size: {x: 5, y: 3.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!222 &222731480937024700
 CanvasRenderer:
