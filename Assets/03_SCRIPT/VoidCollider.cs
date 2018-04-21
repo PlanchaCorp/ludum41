@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VoidCollider : MonoBehaviour {
+    GameObject ball;
+    Vector3 ballInitialPosition;
 
-    public Canvas canvas;
 
-    
+    public void Start()
+    {
+        ball = GameObject.FindGameObjectWithTag("Ball");
+        ballInitialPosition = ball.transform.position;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        Defeat();
+        if (other.tag == "Ball")
+        {
+            Defeat();
+        }
     }
 
     private void Defeat()
     {
         Debug.Log("defeat");
-        canvas.enabled = true;
+        ball.transform.position = ballInitialPosition;
+        Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
+        ballRb.velocity = Vector3.zero;
+        ballRb.angularVelocity = 0;
     }
 }
