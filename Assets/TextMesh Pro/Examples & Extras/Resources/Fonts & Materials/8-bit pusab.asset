@@ -11,19 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: -667331979, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: 8-bit pusab
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -1549030529
   material: {fileID: 21686168742898846}
-  materialHashCode: 0
+  materialHashCode: -220830444
   fontAssetType: 2
   m_fontInfo:
     Name: 8-bit pusab
     PointSize: 41
-    Scale: 0
+    Scale: 1
     CharacterCount: 95
     LineHeight: 68
     Baseline: 0
     Ascender: 55
-    CapHeight: 0
+    CapHeight: 47
     Descender: -14
     CenterLine: 0
     SuperscriptOffset: 55
@@ -33,7 +33,7 @@ MonoBehaviour:
     UnderlineThickness: 2.0419922
     strikethrough: 14.909091
     strikethroughThickness: 2.0419922
-    TabWidth: 0
+    TabWidth: 200
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
@@ -42,10 +42,10 @@ MonoBehaviour:
   - id: 32
     x: 5
     y: 507
-    width: 0
-    height: 0
+    width: 20
+    height: 69
     xOffset: 0
-    yOffset: 0
+    yOffset: 55
     xAdvance: 20
     scale: 1
   - id: 33
