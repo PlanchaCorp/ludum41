@@ -6,10 +6,7 @@ public class HoleCollider : MonoBehaviour {
 
     public Canvas canvas;
 
-    void OnBecameInvisible()
-    {
-        Debug.Log("invisible");
-    }
+  
 
     void OnTriggerEnter2D(Collider2D other)
     {
