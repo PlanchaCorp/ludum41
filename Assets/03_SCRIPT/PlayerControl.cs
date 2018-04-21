@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
         if (mouseDownTime > 0)
         {
-            PositionArrow();
+            PositionArrow(Input.mousePosition);
         }
 	}
 
@@ -34,6 +34,7 @@ public class PlayerControl : MonoBehaviour {
         float elapsedTime = Time.time - mouseDownTime;
         ShootBall(Input.mousePosition, elapsedTime * 5);
         Destroy(currentArrow);
+        mouseDownTime = 0;
     }
 
     private void ShootBall(Vector2 mousePosition, float elapsedTime)
@@ -51,8 +52,10 @@ public class PlayerControl : MonoBehaviour {
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
     }
 
-    private void PositionArrow()
+    private void PositionArrow(Vector2 mousePosition)
     {
-
+        Vector2 localMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        currentArrow.transform.position = ball.transform.position;
+        currentArrow.transform.rotation = Quaternion.FromToRotation(Vector3.right, new Vector2(localMousePosition.x, localMousePosition.y));
     }
 }
