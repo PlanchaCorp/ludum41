@@ -1,14 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: e783ab2ff3a28094f9a17ec0301ca6fa
-timeCreated: 1524323053
-licenseType: Free
-TextureImporter:
-  fileIDToRecycleName: {}
-=======
-guid: 8a60522da9933704c8996611ff30b231
-timeCreated: 1524323288
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: bumper_0
@@ -19,7 +10,6 @@ TextureImporter:
     21300010: bumper_5
     21300012: bumper_6
     21300014: bumper_7
->>>>>>> 47d7ba60ef95288f6cda74521e4b8aaf07ba10de
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -47,35 +37,22 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 47d7ba60ef95288f6cda74521e4b8aaf07ba10de
     aniso: -1
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
-  spriteMode: 1
-=======
   spriteMode: 2
->>>>>>> 47d7ba60ef95288f6cda74521e4b8aaf07ba10de
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
-  spritePixelsToUnits: 16
->>>>>>> 47d7ba60ef95288f6cda74521e4b8aaf07ba10de
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spritePixelsToUnits: 16
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -89,9 +66,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -108,22 +82,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
->>>>>>> 47d7ba60ef95288f6cda74521e4b8aaf07ba10de
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
-    sprites: []
-=======
     sprites:
     - serializedVersion: 2
       name: bumper_0
@@ -237,7 +197,6 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
->>>>>>> 47d7ba60ef95288f6cda74521e4b8aaf07ba10de
     outline: []
     physicsShape: []
   spritePackingTag: 

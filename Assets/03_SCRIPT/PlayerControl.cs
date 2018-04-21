@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour {
             PositionArrow(Input.mousePosition, shootingTime);
         }
         // Clic gauche
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !playerIsMoving())
         {
             mouseDownTime = Time.time;
             currentArrow = GameObject.Instantiate(arrowPrefab, ball.transform.position, Quaternion.identity);
@@ -34,7 +34,7 @@ public class PlayerControl : MonoBehaviour {
             currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
         }
         // Clic droit
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !playerIsMoving())
         {
             ShootBall(Input.mousePosition, shootingTime);
             Destroy(currentArrow);
@@ -74,5 +74,12 @@ public class PlayerControl : MonoBehaviour {
                 fillerImage.fillAmount = (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1) / 2f;
             }
         }
+    }
+
+    private bool playerIsMoving()
+    {
+        Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
+        float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
+        return ballForce >= 0.1f;
     }
 }
