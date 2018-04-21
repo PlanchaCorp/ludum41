@@ -3,28 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
-    float BALL_FORCE = 60f;
-    float DISTANCE_MAX = 1f;
+    public float BALL_FORCE = 60f;
+    public float DISTANCE_MAX = 1f;
+
+    public GameObject arrowPrefab;
 
     GameObject ball;
-    float mouseDownTime;
+    float mouseDownTime = 0f;
+    private GameObject currentArrow;
         
     void Start () {
         ball = GameObject.FindGameObjectWithTag("Ball");
     }
 	
 	void Update () {
+        if (mouseDownTime > 0)
+        {
+            PositionArrow();
+        }
 	}
 
     public void OnMouseDown()
     {
         mouseDownTime = Time.time;
+        currentArrow = GameObject.Instantiate(arrowPrefab, ball.transform.position, Quaternion.identity);
     }
 
     public void OnMouseUp()
     {
         float elapsedTime = Time.time - mouseDownTime;
         ShootBall(Input.mousePosition, elapsedTime * 5);
+        Destroy(currentArrow);
     }
 
     private void ShootBall(Vector2 mousePosition, float elapsedTime)
@@ -40,5 +49,10 @@ public class PlayerControl : MonoBehaviour {
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
+    }
+
+    private void PositionArrow()
+    {
+
     }
 }
