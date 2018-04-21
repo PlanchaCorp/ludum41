@@ -91,7 +91,7 @@ public class PlayerControl : MonoBehaviour {
 
     private void RotatePlayer(float arrowRotation)
     {
-        character.transform.eulerAngles = new Vector3(0.0f, (arrowRotation > 90 && arrowRotation <= 270) ? 180 : 0, 0);
+     //   character.transform.eulerAngles = new Vector3(0.0f, (arrowRotation > 90 && arrowRotation <= 270) ? 180 : 0, 0);
     }
 
     private void TeleportPlayer()
