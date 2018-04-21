@@ -113,6 +113,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &103019514 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1949034519915628, guid: 49000dd0e651fa843ba1f4f8fdc68e06,
+    type: 2}
+  m_PrefabInternal: {fileID: 1182874544}
+--- !u!95 &103019521
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103019514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85e2c1115ff5e8b40bae42b89b31a6e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &104915472
 Prefab:
   m_ObjectHideFlags: 0
@@ -216,6 +238,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212489587847251346, guid: e4ef334703db3d945a5a1612b1feb061,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e783ab2ff3a28094f9a17ec0301ca6fa,
+        type: 3}
+    - target: {fileID: 212489587847251346, guid: e4ef334703db3d945a5a1612b1feb061,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4ef334703db3d945a5a1612b1feb061, type: 2}
   m_IsPrefabParent: 0
@@ -281,6 +314,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &816771563 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1002435347091826, guid: 1e123725346e357448e202b05bd3ea09,
+    type: 2}
+  m_PrefabInternal: {fileID: 104915472}
+--- !u!95 &816771570
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816771563}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85e2c1115ff5e8b40bae42b89b31a6e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1040902185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,7 +3888,7 @@ GameObject:
   - component: {fileID: 1452782293}
   - component: {fileID: 1452782292}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: plateform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4252,6 +4307,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4042155658851734, guid: d75adff0d6c74d4478bfc9c208d36697, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3.85
@@ -4284,6 +4344,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d75adff0d6c74d4478bfc9c208d36697, type: 2}
   m_IsPrefabParent: 0
