@@ -38,9 +38,9 @@ public class PlayerControl : MonoBehaviour {
         // Clic droit
         if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !PlayerIsMoving())
         {
-            ShootBall(Input.mousePosition, shootingTime);
             Destroy(currentArrow);
             mouseDownTime = 0;
+            ShootBall(Input.mousePosition, shootingTime);
         }
     }
 

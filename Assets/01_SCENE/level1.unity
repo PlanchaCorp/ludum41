@@ -3675,25 +3675,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-  m_TileRefreshArray:
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
-  - serializedVersion: 1
-    m_DirtyIndex: 0
 --- !u!19719996 &1040902189
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3982,7 +3963,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-  m_TileRefreshArray: []
 --- !u!20 &1501484557 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20216772669085890, guid: d75adff0d6c74d4478bfc9c208d36697,
@@ -4307,11 +4287,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4042155658851734, guid: d75adff0d6c74d4478bfc9c208d36697, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3.85
@@ -4344,36 +4319,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
-        type: 2}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 96686596156782748, guid: d75adff0d6c74d4478bfc9c208d36697,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d75adff0d6c74d4478bfc9c208d36697, type: 2}
   m_IsPrefabParent: 0

@@ -12,19 +12,19 @@ public class Displayindicator : MonoBehaviour {
     private void Start()
     {
         screenWidh = Screen.width;
-        Debug.Log(screenWidh);
+        //Debug.Log(screenWidh);
     }
     // Update is called once per frame
     void Update () {
-        Debug.Log((ball.transform.position - hole.transform.position).x);
+        //Debug.Log((ball.transform.position - hole.transform.position).x);
 
-        if ((ball.transform.position - hole.transform.position).x > screenWidh / 2)
+        /*if ((ball.transform.position - hole.transform.position).x > screenWidh / 2)
         {
             Debug.Log("hide");
         } else
         {
             Debug.Log("show");
-        }
+        }*/
 		
 	}
 }
