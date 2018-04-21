@@ -52,7 +52,6 @@ public class PlayerControl : MonoBehaviour {
         // Application de la fonction sinus
         float horizontalForce = BALL_FORCE * (horizontalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1);
         float verticalForce = BALL_FORCE * (verticalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI/2) + 1);
-        Debug.Log(mousePosition.x);
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
