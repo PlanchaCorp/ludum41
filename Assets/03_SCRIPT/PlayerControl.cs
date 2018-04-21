@@ -34,7 +34,7 @@ public class PlayerControl : MonoBehaviour {
             currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
         }
         // Clic droit
-        if (Input.GetMouseButtonUp(0) && !playerIsMoving())
+        if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !playerIsMoving())
         {
             ShootBall(Input.mousePosition, shootingTime);
             Destroy(currentArrow);
@@ -55,6 +55,8 @@ public class PlayerControl : MonoBehaviour {
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
+        // Incrémentation du score
+        gameObject.GetComponent<GameBehavior>().IncrementScore();
     }
 
     private void PositionArrow(Vector3 mousePosition, float elapsedTime)
