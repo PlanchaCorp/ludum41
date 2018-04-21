@@ -63,7 +63,7 @@ public class PlayerControl : MonoBehaviour {
         mousePosition.z = 1;
         Vector2 localMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         currentArrow.transform.rotation = Quaternion.FromToRotation(Vector3.right, localMousePosition - new Vector2(ball.transform.position.x, ball.transform.position.y));
-        currentArrow.transform.position = ball.transform.position;
+        currentArrow.transform.position = ball.transform.position + currentArrow.transform.rotation * (new Vector2(0.5f, 0f));
         // Fill up the power bar
         GameObject[] arrowFillers = GameObject.FindGameObjectsWithTag("ArrowFiller");
         foreach(GameObject arrowFiller in arrowFillers)
