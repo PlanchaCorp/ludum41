@@ -17,26 +17,29 @@ public class PlayerControl : MonoBehaviour {
     }
 	
 	void Update () {
+        // Positionnement de la camera
+        GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = Quaternion.identity;
+        // Positionnement de la flèche de tir
         if (mouseDownTime > 0)
         {
             shootingTime = (Time.time - mouseDownTime) * 5;
             PositionArrow(Input.mousePosition, shootingTime);
         }
-	}
-
-    public void OnMouseDown()
-    {
-        mouseDownTime = Time.time;
-        currentArrow = GameObject.Instantiate(arrowPrefab, ball.transform.position, Quaternion.identity);
-        currentArrow.transform.parent = GameObject.FindGameObjectWithTag("MainCanvas").transform;
-        currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x/10, currentArrow.transform.localScale.y/10);
-    }
-
-    public void OnMouseUp()
-    {
-        ShootBall(Input.mousePosition, shootingTime);
-        Destroy(currentArrow);
-        mouseDownTime = 0;
+        // Clic gauche
+        if (Input.GetMouseButtonDown(0))
+        {
+            mouseDownTime = Time.time;
+            currentArrow = GameObject.Instantiate(arrowPrefab, ball.transform.position, Quaternion.identity);
+            currentArrow.transform.parent = GameObject.FindGameObjectWithTag("MainCanvas").transform;
+            currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
+        }
+        // Clic droit
+        if (Input.GetMouseButtonUp(0))
+        {
+            ShootBall(Input.mousePosition, shootingTime);
+            Destroy(currentArrow);
+            mouseDownTime = 0;
+        }
     }
 
     private void ShootBall(Vector2 mousePosition, float elapsedTime)
@@ -57,7 +60,7 @@ public class PlayerControl : MonoBehaviour {
         // Position and rotate the arrow
         Vector2 localMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         currentArrow.transform.rotation = Quaternion.FromToRotation(Vector3.right, localMousePosition - new Vector2(ball.transform.position.x, ball.transform.position.y));
-        currentArrow.transform.position = ball.transform.position + currentArrow.transform.rotation * new Vector2(0.1f, 0.1f);
+        currentArrow.transform.position = ball.transform.position + new Vector3(0.35f, 0, 0) + currentArrow.transform.rotation * new Vector2(0.3f, 0.3f);
         // Fill up the power bar
         GameObject[] arrowFillers = GameObject.FindGameObjectsWithTag("ArrowFiller");
         foreach(GameObject arrowFiller in arrowFillers)
