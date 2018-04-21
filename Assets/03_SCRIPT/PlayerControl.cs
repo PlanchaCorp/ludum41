@@ -8,12 +8,14 @@ public class PlayerControl : MonoBehaviour {
     public GameObject arrowPrefab;
 
     GameObject ball;
+    GameObject character;
     float mouseDownTime = 0f;
     float shootingTime = 0f;
     private GameObject currentArrow;
         
     void Start () {
         ball = GameObject.FindGameObjectWithTag("Ball");
+        character = GameObject.FindGameObjectWithTag("Player");
     }
 	
 	void Update () {
@@ -26,7 +28,7 @@ public class PlayerControl : MonoBehaviour {
             PositionArrow(Input.mousePosition, shootingTime);
         }
         // Clic gauche
-        if (Input.GetMouseButtonDown(0) && !playerIsMoving())
+        if (Input.GetMouseButtonDown(0) && !PlayerIsMoving())
         {
             mouseDownTime = Time.time;
             currentArrow = GameObject.Instantiate(arrowPrefab, ball.transform.position, Quaternion.identity);
@@ -34,7 +36,7 @@ public class PlayerControl : MonoBehaviour {
             currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
         }
         // Clic droit
-        if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !playerIsMoving())
+        if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !PlayerIsMoving())
         {
             ShootBall(Input.mousePosition, shootingTime);
             Destroy(currentArrow);
@@ -66,6 +68,8 @@ public class PlayerControl : MonoBehaviour {
         Vector2 localMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         currentArrow.transform.rotation = Quaternion.FromToRotation(Vector3.right, localMousePosition - new Vector2(ball.transform.position.x, ball.transform.position.y));
         currentArrow.transform.position = ball.transform.position + currentArrow.transform.rotation * (new Vector2(0.5f, 0f));
+        // Rotate the character
+        RotatePlayer(currentArrow.transform.eulerAngles.z);
         // Fill up the power bar
         GameObject[] arrowFillers = GameObject.FindGameObjectsWithTag("ArrowFiller");
         foreach(GameObject arrowFiller in arrowFillers)
@@ -78,10 +82,20 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
-    private bool playerIsMoving()
+    private bool PlayerIsMoving()
     {
         Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
         float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
         return ballForce >= 0.1f;
+    }
+
+    private void RotatePlayer(float arrowRotation)
+    {
+        character.transform.eulerAngles = new Vector3(0.0f, (arrowRotation > 90 && arrowRotation <= 270) ? 180 : 0, 0);
+    }
+
+    private void TeleportPlayer()
+    {
+        character.transform.position = ball.transform.position;
     }
 }
