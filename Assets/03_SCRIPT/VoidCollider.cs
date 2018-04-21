@@ -28,5 +28,6 @@ public class VoidCollider : MonoBehaviour {
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.velocity = Vector3.zero;
         ballRb.angularVelocity = 0;
+        gameObject.GetComponent<GameBehavior>().ResetScore();
     }
 }
