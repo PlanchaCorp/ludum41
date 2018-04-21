@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CloudBigAnim
+  m_Name: CloudMediumAnim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,13 +19,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: {x: 6.24, y: 6.16, z: 0}
-        inSlope: {x: 1.197, y: 0, z: 0}
-        outSlope: {x: 1.197, y: 0, z: 0}
+        value: {x: -5.9, y: 5.65, z: 0}
+        inSlope: {x: 2.2118332, y: 0, z: 0}
+        outSlope: {x: 2.2118332, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
-        time: 18
-        value: {x: 27.786, y: 6.16, z: 0}
+        time: 12
+        value: {x: 20.642, y: 5.65, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -56,7 +56,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 18
+    m_StopTime: 12
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -77,13 +77,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 6.24
-        inSlope: 1.197
-        outSlope: 1.197
+        value: -5.9
+        inSlope: 2.2118332
+        outSlope: 2.2118332
         tangentMode: 1
       - serializedVersion: 2
-        time: 18
-        value: 27.786
+        time: 12
+        value: 20.642
         inSlope: 0
         outSlope: 0
         tangentMode: 1
@@ -99,13 +99,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 6.16
+        value: 5.65
         inSlope: 0
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 18
-        value: 6.16
+        time: 12
+        value: 5.65
         inSlope: 0
         outSlope: 0
         tangentMode: 1
@@ -126,7 +126,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 18
+        time: 12
         value: 0
         inSlope: 0
         outSlope: 0
