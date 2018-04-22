@@ -93,7 +93,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 4}
+        - {x: -8, y: -2}
+        - {x: -6, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: 4}
       tessellationDetail: 0
     - serializedVersion: 2
       name: monotraversable_1
@@ -107,7 +112,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 4}
+        - {x: -8, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: 4}
       tessellationDetail: 0
     - serializedVersion: 2
       name: monotraversable_2
@@ -121,7 +130,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 4}
+        - {x: -8, y: -4}
+        - {x: 6, y: -4}
+        - {x: 8, y: -2}
+        - {x: 8, y: 4}
       tessellationDetail: 0
     outline: []
     physicsShape: []
