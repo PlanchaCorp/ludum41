@@ -78,7 +78,7 @@ public class GameBehavior : MonoBehaviour {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
             text.text = mapPar + "";
         }
-        UpdateTotal();
+        
     }
 
     public void UpdateTotal()

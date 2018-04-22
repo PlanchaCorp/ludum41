@@ -162,6 +162,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 8195094279857466344, guid: 57414fbec20289c4f8365fc019ffd8d9,
         type: 2}
       propertyPath: m_Tiles.Array.size
@@ -182,6 +183,8 @@ Prefab:
       propertyPath: m_TileSpriteArray.Array.size
       value: 13
       objectReference: {fileID: 0}
+=======
+>>>>>>> cb8b2040098116e22fb33f0f71a73f7f403c0809
     - target: {fileID: 4767862905493744, guid: 57414fbec20289c4f8365fc019ffd8d9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 8.3814745
@@ -214,6 +217,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 4166618532326294, guid: 57414fbec20289c4f8365fc019ffd8d9, type: 2}
       propertyPath: m_LocalPosition.x
       value: -20.68
@@ -21512,11 +21516,22 @@ Prefab:
         type: 2}
       propertyPath: m_Origin.y
       value: -14
-      objectReference: {fileID: 0}
-    - target: {fileID: 8195094279857466344, guid: 57414fbec20289c4f8365fc019ffd8d9,
+=======
+    - target: {fileID: 114968513983686108, guid: 57414fbec20289c4f8365fc019ffd8d9,
         type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+>>>>>>> cb8b2040098116e22fb33f0f71a73f7f403c0809
+      objectReference: {fileID: 0}
+    - target: {fileID: 114968513983686108, guid: 57414fbec20289c4f8365fc019ffd8d9,
+        type: 2}
+<<<<<<< HEAD
       propertyPath: m_Size.y
       value: 26
+=======
+      propertyPath: m_isInputParsingRequired
+      value: 1
+>>>>>>> cb8b2040098116e22fb33f0f71a73f7f403c0809
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57414fbec20289c4f8365fc019ffd8d9, type: 2}
