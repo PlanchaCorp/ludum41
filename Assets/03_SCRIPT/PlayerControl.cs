@@ -25,7 +25,7 @@ public class PlayerControl : MonoBehaviour {
         // Positionnement de la flèche de tir
         if (mouseDownTime > 0)
         {
-            shootingTime = (Time.time - mouseDownTime) * 5;
+            shootingTime = (Time.time - mouseDownTime) * 10;
             PositionArrow(Input.mousePosition, shootingTime);
         }
         bool playerIsMoving = PlayerIsMoving();
