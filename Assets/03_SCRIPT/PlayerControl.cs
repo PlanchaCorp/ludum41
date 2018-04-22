@@ -35,7 +35,7 @@ public class PlayerControl : MonoBehaviour {
             shootingTime = (Time.time - mouseDownTime) * 10;
             PositionArrow(Input.mousePosition, shootingTime);
         }
-        if (!PlayerIsMoving())
+        if (!PlayerIsMoving() && !isTeleporting)
         {
             StartCoroutine(HandleActions());
         }
@@ -198,13 +198,13 @@ public class PlayerControl : MonoBehaviour {
         {
             Debug.Log("AnimateTeleportation : warp = null !");
         }
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.45f);
         character.transform.position = newPosition;
     }
 
     private IEnumerator DestroyAnimation()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.7f);
         Destroy(exitWarp);
         Destroy(enterWarp);
         isTeleporting = false;

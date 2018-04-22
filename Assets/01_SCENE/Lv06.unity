@@ -5914,7 +5914,7 @@ GameObject:
   - component: {fileID: 750568595}
   - component: {fileID: 750568594}
   m_Layer: 0
-  m_Name: EventSystem (1)
+  m_Name: EventSystem
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5950,6 +5950,7 @@ MonoBehaviour:
   DISTANCE_MAX: 1
   arrowPrefab: {fileID: 1065943660235078, guid: 7272ecf34e5305b4691e5b95d32fb715,
     type: 2}
+  warpPrefab: {fileID: 1820362106417320, guid: 50e8cc9dcc8849f4fb8cf78a845ca044, type: 2}
 --- !u!114 &750568596
 MonoBehaviour:
   m_ObjectHideFlags: 0
