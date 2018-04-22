@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58019682633108158}
   - component: {fileID: 96686596156782748}
   - component: {fileID: 82327468530113936}
+  - component: {fileID: 114840047248963656}
   m_Layer: 0
   m_Name: ball
   m_TagString: Ball
@@ -321,6 +322,17 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114840047248963656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667111811316032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183c6e47c49bd3a41b030ee1cc3d5205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124607630060444802
 Behaviour:
   m_ObjectHideFlags: 1

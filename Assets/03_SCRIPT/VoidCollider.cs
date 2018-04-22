@@ -17,17 +17,16 @@ public class VoidCollider : MonoBehaviour {
     {
         if (other.tag == "Ball")
         {
-            Defeat();
+            Rollback();
         }
     }
 
-    private void Defeat()
+    private void Rollback()
     {
-        Debug.Log("defeat");
-        ball.transform.position = ballInitialPosition;
+        Debug.Log(GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerControl>().GetLastStablePosition());
+        ball.transform.position = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerControl>().GetLastStablePosition();
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.velocity = Vector3.zero;
         ballRb.angularVelocity = 0;
-        gameObject.GetComponent<GameBehavior>().ResetScore();
     }
 }
