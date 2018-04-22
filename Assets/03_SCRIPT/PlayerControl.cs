@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour {
     public float DISTANCE_MAX = 1f;
 
     public GameObject arrowPrefab;
+    public GameObject warpPrefab;
 
     GameObject ball;
     GameObject character;
@@ -15,6 +16,9 @@ public class PlayerControl : MonoBehaviour {
     private GameObject currentArrow;
     private int collisionCount = 0;
     private Vector2 lastStablePosition;
+    private GameObject enterWarp = null;
+    private GameObject exitWarp = null;
+    private bool isTeleporting = false;
         
     void Start () {
         ball = GameObject.FindGameObjectWithTag("Ball");
@@ -170,11 +174,40 @@ public class PlayerControl : MonoBehaviour {
     {
         if (character != null && ball != null)
         {
-            character.transform.position = ball.transform.position + new Vector3(0, -ball.GetComponent<CircleCollider2D>().bounds.size.y / 2);
+            Vector3 newCharacterPosition = ball.transform.position + new Vector3(0, -ball.GetComponent<CircleCollider2D>().bounds.size.y / 2);
+            float distance = Mathf.Sqrt(Mathf.Pow(character.transform.position.x - newCharacterPosition.x, 2) + Mathf.Pow(character.transform.position.y - newCharacterPosition.y, 2));
+            if (character.transform.position != newCharacterPosition && exitWarp == null && distance >= 0.5f)
+            {
+                StartCoroutine(TeleportAndAnimate(newCharacterPosition));
+            }
         } else
         {
             Debug.Log("TeleportPlayer : character || ball = null !");
         }
+    }
+
+    private IEnumerator TeleportAndAnimate(Vector3 newPosition)
+    {
+        if (warpPrefab != null)
+        {
+            isTeleporting = true;
+            exitWarp = GameObject.Instantiate(warpPrefab, ball.transform.position, Quaternion.identity);
+            enterWarp = GameObject.Instantiate(warpPrefab, character.transform.position, Quaternion.identity);
+            StartCoroutine(DestroyAnimation());
+        } else
+        {
+            Debug.Log("AnimateTeleportation : warp = null !");
+        }
+        yield return new WaitForSeconds(0.8f);
+        character.transform.position = newPosition;
+    }
+
+    private IEnumerator DestroyAnimation()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(exitWarp);
+        Destroy(enterWarp);
+        isTeleporting = false;
     }
 
     public Vector2 GetLastStablePosition()
