@@ -13,6 +13,8 @@ public class PlayerControl : MonoBehaviour {
     float mouseDownTime = 0f;
     float shootingTime = 0f;
     private GameObject currentArrow;
+    private int collisionCount = 0;
+    private Vector2 lastStablePosition;
         
     void Start () {
         ball = GameObject.FindGameObjectWithTag("Ball");
@@ -49,7 +51,8 @@ public class PlayerControl : MonoBehaviour {
         {
             Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
             ballRb.velocity = Vector3.zero;
-            TeleportPlayer();
+            StartCoroutine(TeleportPlayerIfStill());
+            lastStablePosition = ball.transform.position;
         }
     }
 
@@ -71,8 +74,8 @@ public class PlayerControl : MonoBehaviour {
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
-        // Incrémentation du score
-        gameObject.GetComponent<GameBehavior>().IncrementScore();
+        // Incrémentation du score  
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IncrementScore();
     }
 
     private void PositionArrow(Vector3 mousePosition, float elapsedTime)
@@ -106,7 +109,7 @@ public class PlayerControl : MonoBehaviour {
         {
             Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
             float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
-            return ballForce >= 0.1f;
+            return ballForce >= 0.25f;
         } else
         {
             Debug.Log("PlayerIsMoving : ball = null !");
@@ -125,6 +128,15 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+    private IEnumerator TeleportPlayerIfStill()
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (!PlayerIsMoving())
+        {
+            TeleportPlayer();
+        }
+    }
+
     private void TeleportPlayer()
     {
         if (character != null && ball != null)
@@ -135,4 +147,10 @@ public class PlayerControl : MonoBehaviour {
             Debug.Log("TeleportPlayer : character || ball = null !");
         }
     }
+
+    public Vector2 GetLastStablePosition()
+    {
+        return lastStablePosition;
+    }
+
 }
