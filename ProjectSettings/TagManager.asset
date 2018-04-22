@@ -8,6 +8,7 @@ TagManager:
   - MainCanvas
   - ArrowFiller
   - ScoreText
+  - ParText
   layers:
   - Default
   - TransparentFX
