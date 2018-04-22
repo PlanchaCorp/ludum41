@@ -22,8 +22,9 @@ public class PlayerControl : MonoBehaviour {
     }
 	
 	void Update () {
-        // Positionnement de la camera
+        // Positionnement de la camera et du background
         GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = Quaternion.identity;
+        GameObject.FindGameObjectWithTag("Background").transform.rotation = Quaternion.identity;
         // Positionnement de la flèche de tir
         if (mouseDownTime > 0)
         {
@@ -44,8 +45,8 @@ public class PlayerControl : MonoBehaviour {
         {
             Destroy(currentArrow);
             mouseDownTime = 0;
-            Debug.Log("Shott");
-            ShootBall(Input.mousePosition, shootingTime);
+            Debug.Log("Shot");
+            StartCoroutine(ShootBall(Input.mousePosition, shootingTime));
         }
         // Teleportation
         if (!playerIsMoving && ball != null)
@@ -57,7 +58,7 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
-    private void ShootBall(Vector3 mousePosition, float elapsedTime)
+    private IEnumerator ShootBall(Vector3 mousePosition, float elapsedTime)
     {
         // Effet sonore et animation
         ball.GetComponent<AudioSource>().Play();
@@ -71,7 +72,7 @@ public class PlayerControl : MonoBehaviour {
         float horizontalForce = BALL_FORCE * (horizontalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1);
         float verticalForce = BALL_FORCE * (verticalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI/2) + 1);
         // Attente de l'animation
-       // yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f);
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
@@ -111,7 +112,8 @@ public class PlayerControl : MonoBehaviour {
         {
             Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
             float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
-            return ballForce >= 0.25f;
+            RaycastHit2D[] verticalRaycastHit = Physics2D.RaycastAll(ball.transform.position, new Vector2(ball.transform.position.x, ball.transform.position.y + 1), ball.GetComponent<CircleCollider2D>().bounds.size.y / 2 + 0.1f);
+            return ballForce >= 0.2f || verticalRaycastHit.Length <= 1;
         } else
         {
             Debug.Log("PlayerIsMoving : ball = null !");
