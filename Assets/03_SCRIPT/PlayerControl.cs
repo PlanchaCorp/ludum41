@@ -1,5 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
     public float BALL_FORCE = 400f;
@@ -41,17 +42,22 @@ public class PlayerControl : MonoBehaviour {
         {
             Destroy(currentArrow);
             mouseDownTime = 0;
-            ShootBall(Input.mousePosition, shootingTime);
+            StartCoroutine(ShootBall(Input.mousePosition, shootingTime));
         }
         // Teleportation
-        if (!playerIsMoving)
+        if (!playerIsMoving && ball != null)
         {
+            Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
+            ballRb.velocity = Vector3.zero;
             TeleportPlayer();
         }
     }
 
-    private void ShootBall(Vector3 mousePosition, float elapsedTime)
+    private IEnumerator ShootBall(Vector3 mousePosition, float elapsedTime)
     {
+        // Effet sonore et animation
+        ball.GetComponent<AudioSource>().Play();
+        character.GetComponent<Animator>().SetTrigger("Shoot");
         // Calcul des distances
         mousePosition.z = 1;
         float horizontalDistance = Camera.main.ScreenToWorldPoint(mousePosition).x - ball.transform.position.x;
@@ -60,17 +66,21 @@ public class PlayerControl : MonoBehaviour {
         // Application de la fonction sinus
         float horizontalForce = BALL_FORCE * (horizontalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1);
         float verticalForce = BALL_FORCE * (verticalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI/2) + 1);
+        // Attente de l'animation
+        yield return new WaitForSeconds(0.2f);
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
-        // Effet sonore
-        ball.GetComponent<AudioSource>().Play();
         // Incrémentation du score
         gameObject.GetComponent<GameBehavior>().IncrementScore();
     }
 
     private void PositionArrow(Vector3 mousePosition, float elapsedTime)
     {
+        if (currentArrow == null)
+        {
+            return;
+        }
         // Position and rotate the arrow
         mousePosition.z = 1;
         Vector2 localMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -92,18 +102,37 @@ public class PlayerControl : MonoBehaviour {
 
     private bool PlayerIsMoving()
     {
-        Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
-        float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
-        return ballForce >= 0.1f;
+        if (ball != null)
+        {
+            Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
+            float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
+            return ballForce >= 0.1f;
+        } else
+        {
+            Debug.Log("PlayerIsMoving : ball = null !");
+            return false;
+        }
     }
 
     private void RotatePlayer(float arrowRotation)
     {
-        character.transform.eulerAngles = new Vector3(0.0f, (arrowRotation > 90 && arrowRotation <= 270) ? 180 : 0, 0);
+        if (character != null)
+        {
+            character.transform.eulerAngles = new Vector3(0.0f, (arrowRotation > 90 && arrowRotation <= 270) ? 180 : 0, 0);
+        } else
+        {
+            Debug.Log("RotatePlayer : character = null !");
+        }
     }
 
     private void TeleportPlayer()
     {
-        character.transform.position = ball.transform.position + new Vector3(0, -ball.GetComponent<CircleCollider2D>().bounds.size.y/2);
+        if (character != null && ball != null)
+        {
+            character.transform.position = ball.transform.position + new Vector3(0, -ball.GetComponent<CircleCollider2D>().bounds.size.y / 2);
+        } else
+        {
+            Debug.Log("TeleportPlayer : character || ball = null !");
+        }
     }
 }
