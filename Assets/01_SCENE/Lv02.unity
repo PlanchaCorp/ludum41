@@ -7027,8 +7027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbe85fa10312624dad3464cc6a887fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapPar: 0
-  levelNumber: 0
+  mapPar: 2
+  levelNumber: 1
 --- !u!114 &673969412
 MonoBehaviour:
   m_ObjectHideFlags: 0
