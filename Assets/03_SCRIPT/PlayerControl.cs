@@ -22,6 +22,7 @@ public class PlayerControl : MonoBehaviour {
     }
 	
 	void Update () {
+        Debug.Log(PlayerIsMoving());
         // Positionnement de la camera et du background
         GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = Quaternion.identity;
         GameObject.FindGameObjectWithTag("Background").transform.rotation = Quaternion.identity;
@@ -112,8 +113,10 @@ public class PlayerControl : MonoBehaviour {
         {
             Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
             float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
-            RaycastHit2D[] verticalRaycastHit = Physics2D.RaycastAll(ball.transform.position, new Vector2(ball.transform.position.x, ball.transform.position.y + 1), ball.GetComponent<CircleCollider2D>().bounds.size.y / 2 + 0.1f);
-            return ballForce >= 0.2f || verticalRaycastHit.Length <= 1;
+            //RaycastHit2D[] verticalRaycastHit = Physics2D.RaycastAll(ball.transform.position, ball.transform.position + Vector3.down, ball.GetComponent<CircleCollider2D>().bounds.size.y);
+            //Debug.DrawLine(ball.transform.position, (ball.transform.position + Vector3.down) * ball.GetComponent<CircleCollider2D>().bounds.size.y);
+            //Debug.Log(verticalRaycastHit.Length);
+            return ballForce >= 0.2f/* || verticalRaycastHit.Length <= 1*/;
         } else
         {
             Debug.Log("PlayerIsMoving : ball = null !");
