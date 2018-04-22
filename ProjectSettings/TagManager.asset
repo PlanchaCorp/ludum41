@@ -9,6 +9,7 @@ TagManager:
   - ArrowFiller
   - ScoreText
   - ParText
+  - Background
   layers:
   - Default
   - TransparentFX
