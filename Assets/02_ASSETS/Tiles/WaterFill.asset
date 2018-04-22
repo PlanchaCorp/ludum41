@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: WaterFill
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 21300008, guid: c830c4bdde795c74ca640c14f29e2b5f, type: 3}
-  - {fileID: 21300010, guid: c830c4bdde795c74ca640c14f29e2b5f, type: 3}
-  - {fileID: 21300012, guid: c830c4bdde795c74ca640c14f29e2b5f, type: 3}
-  - {fileID: 21300014, guid: c830c4bdde795c74ca640c14f29e2b5f, type: 3}
+  - {fileID: 21300008, guid: 96590767744fbb24f874ab308cdbd475, type: 3}
+  - {fileID: 21300010, guid: 96590767744fbb24f874ab308cdbd475, type: 3}
+  - {fileID: 21300012, guid: 96590767744fbb24f874ab308cdbd475, type: 3}
+  - {fileID: 21300014, guid: 96590767744fbb24f874ab308cdbd475, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
-  m_TileColliderType: 0
+  m_TileColliderType: 2
