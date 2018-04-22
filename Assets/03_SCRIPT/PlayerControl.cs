@@ -44,7 +44,8 @@ public class PlayerControl : MonoBehaviour {
         {
             Destroy(currentArrow);
             mouseDownTime = 0;
-            StartCoroutine(ShootBall(Input.mousePosition, shootingTime));
+            Debug.Log("Shott");
+            ShootBall(Input.mousePosition, shootingTime);
         }
         // Teleportation
         if (!playerIsMoving && ball != null)
@@ -56,7 +57,7 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
-    private IEnumerator ShootBall(Vector3 mousePosition, float elapsedTime)
+    private void ShootBall(Vector3 mousePosition, float elapsedTime)
     {
         // Effet sonore et animation
         ball.GetComponent<AudioSource>().Play();
@@ -70,11 +71,12 @@ public class PlayerControl : MonoBehaviour {
         float horizontalForce = BALL_FORCE * (horizontalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1);
         float verticalForce = BALL_FORCE * (verticalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI/2) + 1);
         // Attente de l'animation
-        yield return new WaitForSeconds(0.2f);
+       // yield return new WaitForSeconds(0.2f);
         // Application des forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
         // Incrémentation du score  
+      
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IncrementScore();
     }
 
