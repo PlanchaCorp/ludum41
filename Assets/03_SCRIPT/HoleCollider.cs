@@ -13,6 +13,9 @@ public class HoleCollider : MonoBehaviour {
         Debug.Log(other.tag);
         if (other.tag == "Ball")
         {
+          
+          
+          other.enabled = false;
             Victory();
         }
       
@@ -21,7 +24,9 @@ public class HoleCollider : MonoBehaviour {
     private void Victory()
     {
         Debug.Log("victory");
+
         canvas.enabled = true;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().SetLevelScore();
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().UpdateTotal();
     }
 

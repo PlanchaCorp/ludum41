@@ -44,7 +44,7 @@ public class PlayerControl : MonoBehaviour {
         {
             Destroy(currentArrow);
             mouseDownTime = 0;
-            Debug.Log("Shott");
+           
             ShootBall(Input.mousePosition, shootingTime);
         }
         // Teleportation
