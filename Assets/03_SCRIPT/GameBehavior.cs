@@ -99,7 +99,7 @@ public class GameBehavior : MonoBehaviour {
     public void UpdateTotal()
     {
         GameObject[] totalTexts = GameObject.FindGameObjectsWithTag("TotalText");
-        TextMeshProUGUI holeText = GameObject.Find("holeNum").GetComponent<TextMeshProUGUI>(); ;
+        TextMeshProUGUI holeText = GameObject.Find("holeNum").GetComponent<TextMeshProUGUI>(); 
         foreach (GameObject parText in totalTexts)
         {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();

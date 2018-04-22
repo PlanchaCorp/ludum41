@@ -13,10 +13,9 @@ public class HoleCollider : MonoBehaviour {
         Debug.Log(other.tag);
         if (other.tag == "Ball")
         {
-          
-          
-          other.enabled = false;
-            Victory();
+            Time.timeScale = 0;
+             //other.enabled = false;
+             Victory();
         }
       
     }
