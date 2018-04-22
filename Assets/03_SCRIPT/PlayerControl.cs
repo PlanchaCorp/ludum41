@@ -113,10 +113,11 @@ public class PlayerControl : MonoBehaviour {
         {
             Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
             float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
-            //RaycastHit2D[] verticalRaycastHit = Physics2D.RaycastAll(ball.transform.position, ball.transform.position + Vector3.down, ball.GetComponent<CircleCollider2D>().bounds.size.y);
-            //Debug.DrawLine(ball.transform.position, (ball.transform.position + Vector3.down) * ball.GetComponent<CircleCollider2D>().bounds.size.y);
+            //RaycastHit2D[] verticalRaycastHit = Physics2D.RaycastAll(ball.transform.position, ball.transform.position + Vector3.down, ball.GetComponent<CircleCollider2D>().radius * 2);
+            //Debug.Log(ball.GetComponent<CircleCollider2D>().radius);
+            //Debug.DrawLine(ball.transform.position, (ball.transform.position + Vector3.down * ball.GetComponent<CircleCollider2D>().radius*3));
             //Debug.Log(verticalRaycastHit.Length);
-            return ballForce >= 0.2f/* || verticalRaycastHit.Length <= 1*/;
+            return ballForce >= 0.2f;// || verticalRaycastHit.Length <= 1;
         } else
         {
             Debug.Log("PlayerIsMoving : ball = null !");
