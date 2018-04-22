@@ -1,10 +1,11 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameBehavior : MonoBehaviour {
     private int mapScore;
     public  int mapPar = 0;
-    public static int[] scores = new int[3];
+    public static List<int> scores = new List<int>();
     public void ResetScore()
     {
         mapScore = 0;
@@ -21,10 +22,12 @@ public class GameBehavior : MonoBehaviour {
         return mapScore;
     }
 
-    public void SetLevelScore(int level, int score)
+    public void SetLevelScore(int score)
     {
-        scores[level] = score;
+        scores.Add(score);
     }
+
+
     
 	void Start () {
         ResetScore();
@@ -74,6 +77,27 @@ public class GameBehavior : MonoBehaviour {
         {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
             text.text = mapPar + "";
+        }
+        UpdateTotal();
+    }
+
+    public void UpdateTotal()
+    {
+        GameObject[] totalTexts = GameObject.FindGameObjectsWithTag("TotalText");
+        foreach (GameObject parText in totalTexts)
+        {
+            TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
+            text.text = "";
+            int sum = 0;
+            foreach (int score in scores)
+            {
+                sum += score;
+                text.text += scores + "  ";
+            }
+            text.text += sum;
+
+
+
         }
     }
 
