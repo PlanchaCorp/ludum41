@@ -45,6 +45,10 @@ public class PlayerControl : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !playerIsMoving)
         {
             mouseDownTime = Time.time;
+            if (currentArrow != null)
+            {
+                Destroy(currentArrow);
+            }
             currentArrow = GameObject.Instantiate(arrowPrefab, ball.transform.position, Quaternion.identity);
             currentArrow.transform.parent = GameObject.FindGameObjectWithTag("MainCanvas").transform;
             currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
