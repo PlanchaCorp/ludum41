@@ -10,7 +10,7 @@ public class BumperBehavior : MonoBehaviour {
         if (collision.tag == "Ball" && GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             GetComponent<Animator>().SetTrigger("bump");
-            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bumpPower));
+            collision.GetComponent<Rigidbody2D>().AddForce(gameObject.transform.rotation * new Vector2(0, bumpPower));
         }
     }
 }
