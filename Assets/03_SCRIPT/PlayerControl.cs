@@ -20,9 +20,8 @@ public class PlayerControl : MonoBehaviour {
         ball = GameObject.FindGameObjectWithTag("Ball");
         character = GameObject.FindGameObjectWithTag("Player");
     }
-	
-	void Update () {
-        Debug.Log(PlayerIsMoving());
+
+    void Update() {
         // Positionnement de la camera et du background
         GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = Quaternion.identity;
         GameObject.FindGameObjectWithTag("Background").transform.rotation = Quaternion.identity;
@@ -32,6 +31,15 @@ public class PlayerControl : MonoBehaviour {
             shootingTime = (Time.time - mouseDownTime) * 10;
             PositionArrow(Input.mousePosition, shootingTime);
         }
+        if (!PlayerIsMoving())
+        {
+            StartCoroutine(HandleActions());
+        }
+    }
+
+    private IEnumerator HandleActions()
+    {
+        yield return new WaitForSeconds(0.4f);
         bool playerIsMoving = PlayerIsMoving();
         // Clic gauche
         if (Input.GetMouseButtonDown(0) && !playerIsMoving)
@@ -113,11 +121,20 @@ public class PlayerControl : MonoBehaviour {
         {
             Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
             float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
-            //RaycastHit2D[] verticalRaycastHit = Physics2D.RaycastAll(ball.transform.position, ball.transform.position + Vector3.down, ball.GetComponent<CircleCollider2D>().radius * 2);
+            /*RaycastHit2D[] verticalRaycastHits = Physics2D.RaycastAll(ball.transform.position, ball.transform.position + Vector3.down, ball.GetComponent<CircleCollider2D>().radius * 2);
             //Debug.Log(ball.GetComponent<CircleCollider2D>().radius);
-            //Debug.DrawLine(ball.transform.position, (ball.transform.position + Vector3.down * ball.GetComponent<CircleCollider2D>().radius*3));
-            //Debug.Log(verticalRaycastHit.Length);
-            return ballForce >= 0.2f;// || verticalRaycastHit.Length <= 1;
+            Debug.DrawLine(ball.transform.position, (ball.transform.position + Vector3.down * ball.GetComponent<CircleCollider2D>().radius*3));
+            bool collideWithSomething = false;
+            foreach (RaycastHit2D verticalRaycastHit in verticalRaycastHits)
+            {
+                Debug.Log(verticalRaycastHit.distance);
+                Debug.Log(verticalRaycastHit.collider.tag);
+                if (verticalRaycastHit.collider.tag != "Ball")
+                {
+                    collideWithSomething = true;
+                }
+            }*/
+            return ballForce >= 0.2f;
         } else
         {
             Debug.Log("PlayerIsMoving : ball = null !");
