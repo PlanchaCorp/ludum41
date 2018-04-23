@@ -55,7 +55,7 @@ public class GameBehavior : MonoBehaviour {
         gameObject.GetComponent<GameBehavior>().UpdatePar();
 
          title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
-        title.text = (levelData.id +1 )+ ". " + levelData.name;
+        title.text = (levelData.id)+ ". " + levelData.name;
 
 
          dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
@@ -72,6 +72,7 @@ public class GameBehavior : MonoBehaviour {
             SceneManager.LoadScene("MainMenu");
         }
         if (Input.GetMouseButtonDown(0)) { 
+            Debug.Log("click");
             dialogue.enabled = false;
             title.enabled = false;
             dialogueFrame.enabled = false;
