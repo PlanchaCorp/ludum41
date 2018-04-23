@@ -7023,6 +7023,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 67680f88089256f4283cc38bb133a5ce, type: 2}
+  levelId: 11
+  levelName: Scrap Tower
+  levelDialog: To the great overthrow where they began to weep
+  levelPar: 6
 --- !u!114 &750568595
 MonoBehaviour:
   m_ObjectHideFlags: 0
