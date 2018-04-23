@@ -5,24 +5,31 @@ using UnityEngine;
 public class LevelSelectionMenu : MonoBehaviour {
 
     public List<LevelData> levels = new List<LevelData>();
-    GameObject[] panels;
+    LevelPanelRenderer[] panels;
 
 
 	// Use this for initialization
 	void Start () {
-        panels = GameObject.FindGameObjectsWithTag("levelSelector");
-        Debug.Log(panels.Length);
-        foreach ( LevelData level in levels)
+        panels = gameObject.GetComponentsInChildren<LevelPanelRenderer>();// FindGameObjectsWithTag("levelSelector");
+    
+        
+        for (int i =0; i < panels.Length; i++)
         {
-            LevelPanelRenderer l =  panels[level.id].GetComponent<LevelPanelRenderer>();
+            Debug.Log(panels[i].name);
+            LevelPanelRenderer l = panels[i];
             
-            l.LevelData = level;
+            l.LevelData = levels[i];
             l.SetInfo();
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    public void NextPanel()
+    {
+        Debug.Log(this.name);
+        this.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
