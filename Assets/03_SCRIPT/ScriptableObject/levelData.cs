@@ -9,4 +9,5 @@ public class LevelData : ScriptableObject
     public string sceneName;
     public int par;
     public int score;
+    public string dialogue;
 }
