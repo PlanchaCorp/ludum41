@@ -8355,6 +8355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbe85fa10312624dad3464cc6a887fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelData: {fileID: 11400000, guid: faea5c19cc158c34ab6393c33fe847a4, type: 2}
   mapPar: 5
   levelNumber: 6
 --- !u!114 &750568595
