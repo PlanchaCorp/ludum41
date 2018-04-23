@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50336389961945124}
   - component: {fileID: 58615093102568984}
   - component: {fileID: 58771146186746130}
+  - component: {fileID: 95023521170265214}
   m_Layer: 0
   m_Name: repulse field
   m_TagString: Untagged
@@ -94,6 +95,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.81
+--- !u!95 &95023521170265214
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949034519915628}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0fdabe55777602743937a145ee23e3b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &212392195664622590
 SpriteRenderer:
   m_ObjectHideFlags: 1

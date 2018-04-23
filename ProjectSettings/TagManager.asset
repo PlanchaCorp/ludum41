@@ -12,6 +12,7 @@ TagManager:
   - Background
   - TotalText
   - levelSelector
+  - Music
   layers:
   - Default
   - TransparentFX
