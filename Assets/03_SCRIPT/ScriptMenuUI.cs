@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class ScriptMenuUI : MonoBehaviour
 {
-
     public Canvas CanvasUI;
     public GameObject MainMenuPanel;
     public GameObject SelectedLevelPanel;
+
+    public void Start()
+    {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<BackgroundMusic>().StopMusic();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<BackgroundMusic>().PlayMusic();
+    }
 
     public void Update()
     {
