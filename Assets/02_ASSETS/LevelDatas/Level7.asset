@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Level7
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  id: 6
-  name: seven
+  id: 7
+  name: Little mermaid
   sceneName: Lv07
-  par: 0
+  par: 4
   score: 0

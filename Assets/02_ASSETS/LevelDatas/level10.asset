@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: level6
+  m_Name: level10
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  id: 6
-  name: Rock bottom
-  sceneName: Lv06
-  par: 5
+  id: 10
+  name: On the edge
+  sceneName: Lv10
+  par: 3
   score: 0

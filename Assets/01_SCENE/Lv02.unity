@@ -5928,6 +5928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbe85fa10312624dad3464cc6a887fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelData: {fileID: 11400000, guid: c13f1f45cd10d984ea7239b1738bbdc4, type: 2}
   mapPar: 2
   levelNumber: 1
 --- !u!114 &673969412

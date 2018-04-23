@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: level3
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  id: 2
+  id: 3
   name: niveau 3
   sceneName: Lv03
   par: 3
-  score: 0
+  score: 1
