@@ -143,7 +143,6 @@ public class GameBehavior : MonoBehaviour {
                 holeText.text += score.Key + "  ";
                 text.text += score.Value + "  ";
             }
-            Debug.Log(sum);
             text.text += sum;
             holeText.text += "T";
 

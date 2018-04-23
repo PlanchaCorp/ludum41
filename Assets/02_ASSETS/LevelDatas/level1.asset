@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: level1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  id: 0
+  id: 1
   name: Hole the day
   sceneName: Lv01
   par: 1
-  score: 0
+  score: 1

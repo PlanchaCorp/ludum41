@@ -12,19 +12,19 @@ public class LevelSelectionMenu : MonoBehaviour {
 	void Start () {
         panels = gameObject.GetComponentsInChildren<LevelPanelRenderer>();// FindGameObjectsWithTag("levelSelector");
     
-        
         for (int i =0; i < panels.Length; i++)
         {
-            Debug.Log(panels[i].name);
             LevelPanelRenderer l = panels[i];
-            
-            l.LevelData = levels[i];
-            l.SetInfo();
+            Debug.Log(levels.Capacity);
+            if (i < levels.Capacity)
+            {
+                l.LevelData = levels[i];
+                l.SetInfo();
+            }
         }
 	}
     public void NextPanel()
     {
-        Debug.Log(this.name);
         this.enabled = false;
     }
 
