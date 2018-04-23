@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Level4
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   id: 4
-  name: lvl 03
+  name: Nature's trial
   sceneName: Lv04
   par: 3
-  score: 3
+  score: 2
