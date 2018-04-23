@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class GameBehavior : MonoBehaviour {
     private int mapScore;
-    public  int mapPar = 0;
-    public int levelNumber = 0;
+    public LevelData levelData;
+    public int mapPar;
+    public int levelNumber;
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
     public void ResetScore()
     {
-        mapScore = 0;
+        levelData.score = 0;
         UpdateScore();
     }
     public void IncrementScore()
     {
-        mapScore++;
+        levelData.score++;
         UpdateScore();
     }
 
     public int GetScore()
     {
-        return mapScore;
+        return levelData.score;
     }
 
     public void SetLevelScore()
@@ -39,6 +40,7 @@ public class GameBehavior : MonoBehaviour {
     
 	void Start () {
         ResetScore();
+
         gameObject.GetComponent<GameBehavior>().UpdatePar();
     }
 
@@ -46,7 +48,7 @@ public class GameBehavior : MonoBehaviour {
     {
         GameObject[] scoreTexts = GameObject.FindGameObjectsWithTag("ScoreText");
         TextMeshProUGUI scoreCommentText = GameObject.Find("ScoreComment").GetComponent<TextMeshProUGUI>();
-        switch ( mapScore - mapPar)
+        switch ( levelData.score - levelData.par)
         {
             case (2):
                 scoreCommentText.text = "Double Bogey";
@@ -71,7 +73,7 @@ public class GameBehavior : MonoBehaviour {
                 break;
 
         }
-        if (mapScore == 1)
+        if (levelData.score == 1)
         {
             scoreCommentText.text = "Hole in one";
         }
@@ -79,7 +81,7 @@ public class GameBehavior : MonoBehaviour {
         {
             
             TextMeshProUGUI text = scoreText.GetComponent<TextMeshProUGUI>();
-            text.text = mapScore + "";
+            text.text = levelData.score + "";
 
             
         }
@@ -91,7 +93,7 @@ public class GameBehavior : MonoBehaviour {
         foreach (GameObject parText in parTexts)
         {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
-            text.text = mapPar + "";
+            text.text = levelData.par + "";
         }
         
     }
