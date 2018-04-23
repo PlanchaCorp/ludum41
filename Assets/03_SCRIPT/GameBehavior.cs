@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameBehavior : MonoBehaviour {
     private int mapScore;
@@ -8,7 +9,13 @@ public class GameBehavior : MonoBehaviour {
     public int mapPar;
     public int levelNumber;
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
+
+    TextMeshProUGUI dialogue;
+    TextMeshProUGUI title;
+    Image dialogueFrame;
     public void ResetScore()
+
+
     {
         levelData.score = 0;
         UpdateScore();
@@ -41,7 +48,29 @@ public class GameBehavior : MonoBehaviour {
 	void Start () {
         ResetScore();
 
+
         gameObject.GetComponent<GameBehavior>().UpdatePar();
+
+         title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
+        title.text = (levelData.id +1 )+ ". " + levelData.name;
+
+
+         dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
+
+        dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
+
+        dialogue.text = levelData.dialogue;
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) { 
+        Debug.Log("click");
+        dialogue.enabled = false;
+        title.enabled = false;
+        dialogueFrame.enabled = false;
+       
+    }
     }
 
     private void UpdateScore()
