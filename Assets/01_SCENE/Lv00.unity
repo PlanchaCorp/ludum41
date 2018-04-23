@@ -5924,6 +5924,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1582306417345468, guid: 08b6c1c5c14abf543ad168b9e0a1a228, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08b6c1c5c14abf543ad168b9e0a1a228, type: 2}
   m_IsPrefabParent: 0
@@ -25847,8 +25851,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbe85fa10312624dad3464cc6a887fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapPar: 2
-  levelNumber: 0
+  levelData: {fileID: 0}
+  levelId: 0
+  levelName: TUTO
+  levelDialog: Use your mouse to push the ball !                      Do not fall
+    into the water                              Be careful with red and blue portal
+    !
+  levelPar: 0
 --- !u!114 &1901786019
 MonoBehaviour:
   m_ObjectHideFlags: 0
