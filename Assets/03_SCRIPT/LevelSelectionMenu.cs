@@ -15,7 +15,6 @@ public class LevelSelectionMenu : MonoBehaviour {
         for (int i =0; i < panels.Length; i++)
         {
             LevelPanelRenderer l = panels[i];
-            Debug.Log(levels.Capacity);
             if (i < levels.Capacity)
             {
                 l.LevelData = levels[i];
