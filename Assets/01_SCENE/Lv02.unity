@@ -5947,7 +5947,7 @@ MonoBehaviour:
   DISTANCE_MAX: 1
   arrowPrefab: {fileID: 1065943660235078, guid: 7272ecf34e5305b4691e5b95d32fb715,
     type: 2}
-  warpPrefab: {fileID: 0}
+  warpPrefab: {fileID: 1820362106417320, guid: 50e8cc9dcc8849f4fb8cf78a845ca044, type: 2}
 --- !u!114 &673969413
 MonoBehaviour:
   m_ObjectHideFlags: 0
