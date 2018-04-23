@@ -12,8 +12,6 @@ public class ScriptMenuUI : MonoBehaviour
 
     public void Start()
     {
-        GameObject.FindGameObjectWithTag("Music").GetComponent<BackgroundMusic>().StopMusic();
-        GameObject.FindGameObjectWithTag("Music").GetComponent<BackgroundMusic>().PlayMusic();
     }
 
     public void Update()
