@@ -3796,6 +3796,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 15d2df5eee015b6409efd3cea39c7014, type: 2}
+  levelId: 10
+  levelName: On the Edge
+  levelDialog: Was to grant human the greatest means and conquer sky and earth.
+  levelPar: 3
 --- !u!114 &475644275
 MonoBehaviour:
   m_ObjectHideFlags: 0

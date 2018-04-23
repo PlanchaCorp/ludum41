@@ -20690,6 +20690,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: cf44a2d7a66050e46b8818727c5eb05b, type: 2}
+  levelId: 4
+  levelName: Nature's trial
+  levelDialog: As there is nothing left, no hornet, wasp or bee
+  levelPar: 3
 --- !u!114 &1459066783
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11512,6 +11512,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 7e4383976e49f644fa44945e6801b9cc, type: 2}
+  levelId: 1
+  levelName: Hole the day
+  levelDialog: You can call me Horfel, the last remaining one.
+  levelPar: 1
 --- !u!114 &750568595
 MonoBehaviour:
   m_ObjectHideFlags: 0

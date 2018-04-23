@@ -8356,6 +8356,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: faea5c19cc158c34ab6393c33fe847a4, type: 2}
+  levelId: 7
+  levelName: Little Mermaid
+  levelDialog: From the gigantic union that all wanted to keep
+  levelPar: 4
 --- !u!114 &750568595
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10944,6 +10944,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 170066c755cdd9e49bea5349167b4a60, type: 2}
+  levelId: 12
+  levelName: Mankind Leftovers
+  levelDialog: Where they all fled faster than their old rocket ship
+  levelPar: 4
 --- !u!114 &256199781
 MonoBehaviour:
   m_ObjectHideFlags: 0

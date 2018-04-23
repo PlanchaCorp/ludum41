@@ -6028,6 +6028,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: c13f1f45cd10d984ea7239b1738bbdc4, type: 2}
+  levelId: 2
+  levelName: Balls of Steel
+  levelDialog: "I don\u2019t know where I am, where I go, I don\u2019t care,"
+  levelPar: 2
 --- !u!114 &673969412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23435,6 +23439,16 @@ Prefab:
         type: 2}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 212700204441550080, guid: 08b6c1c5c14abf543ad168b9e0a1a228,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000431850169350, guid: 08b6c1c5c14abf543ad168b9e0a1a228,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08b6c1c5c14abf543ad168b9e0a1a228, type: 2}

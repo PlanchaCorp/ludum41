@@ -9994,6 +9994,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: b7738bcb16d726c4cac5b3869903d3db, type: 2}
+  levelId: 8
+  levelName: Down the Pit
+  levelDialog: Where they all have built and all have created
+  levelPar: 2
 --- !u!114 &750568595
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameBehavior : MonoBehaviour {
     private int mapScore;
     public LevelData levelData;
+    public int levelId;
+    public string levelName;
+    public string levelDialog;
+    public int levelPar;
+
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
 
     TextMeshProUGUI dialogue;
@@ -31,12 +36,12 @@ public class GameBehavior : MonoBehaviour {
 
     public void SetLevelScore()
     {
-        if (scores.ContainsKey(levelData.id))
+        if (scores.ContainsKey(levelId))
         {
-            scores[levelData.id] = mapScore;
+            scores[levelId] = mapScore;
         } else
         {
-            scores.Add(levelData.id, mapScore);
+            scores.Add(levelId, mapScore);
         }
 
         string activeSceneName = SceneManager.GetActiveScene().name;
@@ -55,14 +60,14 @@ public class GameBehavior : MonoBehaviour {
         gameObject.GetComponent<GameBehavior>().UpdatePar();
 
          title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
-        title.text = (levelData.id)+ ". " + levelData.name;
+        title.text = (levelId) + ". " + levelName;
 
 
          dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
 
         dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
 
-        dialogue.text = levelData.dialogue;
+        dialogue.text = levelDialog;
     }
 
     void Update()
@@ -84,7 +89,7 @@ public class GameBehavior : MonoBehaviour {
     {
         GameObject[] scoreTexts = GameObject.FindGameObjectsWithTag("ScoreText");
         TextMeshProUGUI scoreCommentText = GameObject.Find("ScoreComment").GetComponent<TextMeshProUGUI>();
-        switch (levelData.par - mapScore)
+        switch (levelPar - mapScore)
         {
             case (2):
                 scoreCommentText.text = "Double Bogey";
@@ -129,7 +134,7 @@ public class GameBehavior : MonoBehaviour {
         foreach (GameObject parText in parTexts)
         {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
-            text.text = levelData.par + "";
+            text.text = levelPar + "";
         }
         
     }

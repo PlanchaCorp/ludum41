@@ -10575,6 +10575,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
+  levelId: 3
+  levelName: Scorched land
+  levelDialog: I ought to only golf in this world of nightmare.
+  levelPar: 3
 --- !u!114 &1314817467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22235,6 +22239,16 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2144388853}
+    - target: {fileID: 212700204441550080, guid: 08b6c1c5c14abf543ad168b9e0a1a228,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000431850169350, guid: 08b6c1c5c14abf543ad168b9e0a1a228,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08b6c1c5c14abf543ad168b9e0a1a228, type: 2}
   m_IsPrefabParent: 0

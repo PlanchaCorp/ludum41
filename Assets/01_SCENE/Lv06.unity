@@ -5847,6 +5847,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 796323d36fa41824eab72453d723e477, type: 2}
+  levelId: 6
+  levelName: Rock Bottom
+  levelDialog: I ought to only golf, now that mad men are gone.
+  levelPar: 5
 --- !u!114 &750568595
 MonoBehaviour:
   m_ObjectHideFlags: 0

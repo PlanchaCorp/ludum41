@@ -2694,6 +2694,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: af1ae1020a6a8b64797d352046ac63b2, type: 2}
+  levelId: 5
+  levelName: Rabbit Hole
+  levelDialog: To run with here and there, no mountain, path or sea
+  levelPar: 4
 --- !u!114 &484008153
 MonoBehaviour:
   m_ObjectHideFlags: 0
