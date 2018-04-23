@@ -45,26 +45,23 @@ public class GameBehavior : MonoBehaviour {
         }
 
         string activeSceneName = SceneManager.GetActiveScene().name;
-        if (PlayerPrefs.GetInt(activeSceneName) > mapScore)
+        if (PlayerPrefs.GetInt(activeSceneName) > mapScore || PlayerPrefs.GetInt(activeSceneName) == 0)
         {
             PlayerPrefs.SetInt(activeSceneName, mapScore);
         }
+        Debug.Log(PlayerPrefs.GetInt(activeSceneName) + " - " + activeSceneName);
     }
 
 
     
 	void Start () {
         ResetScore();
-
-
+        
         gameObject.GetComponent<GameBehavior>().UpdatePar();
-
-         title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
+        title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
         title.text = (levelId) + ". " + levelName;
-
-
-         dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
-
+        
+        dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
         dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
 
         dialogue.text = levelDialog;
@@ -77,7 +74,6 @@ public class GameBehavior : MonoBehaviour {
             SceneManager.LoadScene("MainMenu");
         }
         if (Input.GetMouseButtonDown(0)) { 
-            Debug.Log("click");
             dialogue.enabled = false;
             title.enabled = false;
             dialogueFrame.enabled = false;
