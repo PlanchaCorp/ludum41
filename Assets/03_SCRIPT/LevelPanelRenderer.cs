@@ -20,6 +20,7 @@ public class LevelPanelRenderer : MonoBehaviour {
     public void SetInfo () {
         levelname.text = (levelId) + ". " + levelName;
         parName.text = levelPar + "";
+        Debug.Log(levelSceneName);
         scoreName.text = PlayerPrefs.GetInt(levelSceneName) + "";
 	}
 

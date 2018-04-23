@@ -5662,6 +5662,16 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 7e4383976e49f644fa44945e6801b9cc,
         type: 2}
+    - target: {fileID: 114506976644567542, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 988586146}
+    - target: {fileID: 114506976644567542, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114241887820421768, guid: 622c862334182314c954ccd675c88325, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 622c862334182314c954ccd675c88325, type: 2}
