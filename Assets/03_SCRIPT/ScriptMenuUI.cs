@@ -11,6 +11,14 @@ public class ScriptMenuUI : MonoBehaviour
     public GameObject MainMenuPanel;
     public GameObject SelectedLevelPanel;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            quit();
+        }
+    }
+
 
     public void loadScene(string nameScene)
     {
@@ -18,7 +26,6 @@ public class ScriptMenuUI : MonoBehaviour
     }
     public void quit()
     {
-
         Application.Quit();
     }
     public void BtnPlay()

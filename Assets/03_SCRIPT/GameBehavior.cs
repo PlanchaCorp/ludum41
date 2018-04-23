@@ -2,45 +2,48 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameBehavior : MonoBehaviour {
     private int mapScore;
     public LevelData levelData;
-    public int mapPar;
-    public int levelNumber;
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
 
     TextMeshProUGUI dialogue;
     TextMeshProUGUI title;
     Image dialogueFrame;
+
     public void ResetScore()
-
-
     {
-        levelData.score = 0;
+        mapScore = 0;
         UpdateScore();
     }
     public void IncrementScore()
     {
-        levelData.score++;
+        mapScore++;
         UpdateScore();
     }
 
     public int GetScore()
     {
-        return levelData.score;
+        return mapScore;
     }
 
     public void SetLevelScore()
     {
-        if (scores.ContainsKey(levelNumber))
+        if (scores.ContainsKey(levelData.id))
         {
-            scores[levelNumber] = mapScore;
+            scores[levelData.id] = mapScore;
         } else
         {
-            scores.Add(levelNumber, mapScore);
+            scores.Add(levelData.id, mapScore);
         }
-      
+
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        if (PlayerPrefs.GetInt(activeSceneName) > mapScore)
+        {
+            PlayerPrefs.SetInt(activeSceneName, mapScore);
+        }
     }
 
 
@@ -64,20 +67,23 @@ public class GameBehavior : MonoBehaviour {
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         if (Input.GetMouseButtonDown(0)) { 
-        Debug.Log("click");
-        dialogue.enabled = false;
-        title.enabled = false;
-        dialogueFrame.enabled = false;
+            dialogue.enabled = false;
+            title.enabled = false;
+            dialogueFrame.enabled = false;
        
-    }
+        }
     }
 
     private void UpdateScore()
     {
         GameObject[] scoreTexts = GameObject.FindGameObjectsWithTag("ScoreText");
         TextMeshProUGUI scoreCommentText = GameObject.Find("ScoreComment").GetComponent<TextMeshProUGUI>();
-        switch ( levelData.score - levelData.par)
+        switch (levelData.par - mapScore)
         {
             case (2):
                 scoreCommentText.text = "Double Bogey";
@@ -102,7 +108,7 @@ public class GameBehavior : MonoBehaviour {
                 break;
 
         }
-        if (levelData.score == 1)
+        if (mapScore == 1)
         {
             scoreCommentText.text = "Hole in one";
         }
@@ -110,7 +116,7 @@ public class GameBehavior : MonoBehaviour {
         {
             
             TextMeshProUGUI text = scoreText.GetComponent<TextMeshProUGUI>();
-            text.text = levelData.score + "";
+            text.text = mapScore + "";
 
             
         }
