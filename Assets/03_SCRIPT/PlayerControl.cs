@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour {
     private GameObject enterWarp = null;
     private GameObject exitWarp = null;
     private bool isTeleporting = false;
+    private bool isShooting = false;
         
     void Start () {
         ball = GameObject.FindGameObjectWithTag("Ball");
@@ -35,7 +36,8 @@ public class PlayerControl : MonoBehaviour {
             shootingTime = (Time.time - mouseDownTime) * 10;
             PositionArrow(Input.mousePosition, shootingTime);
         }
-        if (!PlayerIsMoving() && !isTeleporting && !GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IsDialogPrinted())
+        if (!PlayerIsMoving() && !isTeleporting && 
+            !GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IsDialogPrinted())
         {
             StartCoroutine(HandleActions());
         }
@@ -77,6 +79,7 @@ public class PlayerControl : MonoBehaviour {
 
     private IEnumerator ShootBall(Vector3 mousePosition, float elapsedTime)
     {
+        isShooting = true;
         // Effet sonore et animation
         ball.GetComponent<AudioSource>().Play();
         character.GetComponent<Animator>().SetTrigger("Shoot");
@@ -96,6 +99,7 @@ public class PlayerControl : MonoBehaviour {
         // Incrémentation du score  
       
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IncrementScore();
+        isShooting = false;
     }
 
     private void PositionArrow(Vector3 mousePosition, float elapsedTime)
@@ -142,7 +146,7 @@ public class PlayerControl : MonoBehaviour {
                     collideWithSomething = true;
                 }
             }*/
-            return ballForce >= 0.2f;
+            return isShooting || ballForce >= 0.2f;
         } else
         {
             Debug.Log("PlayerIsMoving : ball = null !");
