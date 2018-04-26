@@ -35,7 +35,7 @@ public class PlayerControl : MonoBehaviour {
             shootingTime = (Time.time - mouseDownTime) * 10;
             PositionArrow(Input.mousePosition, shootingTime);
         }
-        if (!PlayerIsMoving() && !isTeleporting)
+        if (!PlayerIsMoving() && !isTeleporting && !GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IsDialogPrinted())
         {
             StartCoroutine(HandleActions());
         }
@@ -45,7 +45,7 @@ public class PlayerControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.4f);
         bool playerIsMoving = PlayerIsMoving();
-        // Clic gauche
+        // Clic gauche appuyé
         if (Input.GetMouseButtonDown(0) && !playerIsMoving)
         {
             mouseDownTime = Time.time;
@@ -57,7 +57,7 @@ public class PlayerControl : MonoBehaviour {
             currentArrow.transform.parent = GameObject.FindGameObjectWithTag("MainCanvas").transform;
             currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
         }
-        // Clic droit
+        // Clic gauche relaché
         if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !playerIsMoving)
         {
             Destroy(currentArrow);

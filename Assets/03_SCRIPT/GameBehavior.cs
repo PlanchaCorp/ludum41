@@ -118,10 +118,13 @@ public class GameBehavior : MonoBehaviour {
         {
             
             TextMeshProUGUI text = scoreText.GetComponent<TextMeshProUGUI>();
-            text.text = mapScore + "";
-
-            
+            text.text = mapScore + ""; 
         }
+    }
+
+    public bool IsDialogPrinted()
+    {
+        return dialogue.enabled;
     }
 
     public void UpdatePar()
