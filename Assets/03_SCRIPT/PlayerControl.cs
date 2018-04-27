@@ -2,40 +2,91 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerControl : MonoBehaviour {
-    public float BALL_FORCE = 400f;
-    public float DISTANCE_MAX = 1f;
 
+/// <summary>
+/// Managing the player controls with ball forces and character teleportation
+/// </summary>
+public class PlayerControl : MonoBehaviour {
+    /// <summary>
+    /// Power of the ball
+    /// </summary>
+    public float BALL_FORCE = 400f;
+    /// <summary>
+    /// Prefab of the arrow to spawn
+    /// </summary>
     public GameObject arrowPrefab;
+    /// <summary>
+    /// Prefab of the player teleporting warp to spawn
+    /// </summary>
     public GameObject warpPrefab;
 
-    GameObject ball;
-    GameObject character;
-    float mouseDownTime = 0f;
-    float shootingTime = 0f;
+
+    /// <summary>
+    /// Variable referencing the ball
+    /// </summary>
+    private GameObject ball;
+    /// <summary>
+    /// Variable referencing the character
+    /// </summary>
+    private GameObject character;
+    /// <summary>
+    /// Variable referencing the current shoot arrow
+    /// </summary>
     private GameObject currentArrow;
-    private int collisionCount = 0;
-    private Vector2 lastStablePosition;
+    /// <summary>
+    /// Variable memorizing the warp used before the player teleports (if exists)
+    /// </summary>
     private GameObject enterWarp = null;
+    /// <summary>
+    /// Variable memorizing the warp used after the player teleports (if exists)
+    /// </summary>
     private GameObject exitWarp = null;
+
+
+    /// <summary>
+    /// Last remembered position of the ball when still
+    /// </summary>
+    private Vector2 lastStablePosition;
+    /// <summary>
+    /// Time elapsed with mouse down
+    /// </summary>
+    private float mouseDownTime = 0f;
+    /// <summary>
+    /// Time elapsed since holding shoot button
+    /// </summary>
+    private float shootingTime = 0f;
+    /// <summary>
+    /// Boolean true when character is teleporting
+    /// </summary>
     private bool isTeleporting = false;
+    /// <summary>
+    /// Boolean true when character is in shooting phase, before he hits the ball
+    /// </summary>
     private bool isShooting = false;
         
-    void Start () {
+
+    /// <summary>
+    /// Save references to ball and character gameobjects at startup
+    /// </summary>
+    public void Start () {
         ball = GameObject.FindGameObjectWithTag("Ball");
         character = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void Update() {
-        // Positionnement de la camera et du background
+    /// <summary>
+    /// Update phase
+    /// </summary>
+    public void Update() {
+        // Reposition camera and background
         GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = Quaternion.identity;
         GameObject.FindGameObjectWithTag("Background").transform.rotation = Quaternion.identity;
-        // Positionnement de la flèche de tir
+        // Position and fill shoot arrow
         if (mouseDownTime > 0)
         {
             shootingTime = (Time.time - mouseDownTime) * 10;
             PositionArrow(Input.mousePosition, shootingTime);
         }
+        // Handle actions if actions are available
         if (!PlayerIsMoving() && !isTeleporting && 
             !GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IsDialogPrinted())
         {
@@ -43,11 +94,15 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Handling different play actions
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator HandleActions()
     {
         yield return new WaitForSeconds(0.4f);
         bool playerIsMoving = PlayerIsMoving();
-        // Clic gauche appuyé
+        // Left click pressed
         if (Input.GetMouseButtonDown(0) && !playerIsMoving)
         {
             mouseDownTime = Time.time;
@@ -59,7 +114,7 @@ public class PlayerControl : MonoBehaviour {
             currentArrow.transform.parent = GameObject.FindGameObjectWithTag("MainCanvas").transform;
             currentArrow.transform.localScale = new Vector2(currentArrow.transform.localScale.x / 10, currentArrow.transform.localScale.y / 10);
         }
-        // Clic gauche relaché
+        // Left click released
         if (Input.GetMouseButtonUp(0) && mouseDownTime > 0 && !playerIsMoving)
         {
             Destroy(currentArrow);
@@ -77,31 +132,41 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Shoot the ball
+    /// </summary>
+    /// <param name="mousePosition">Current position of the mouse</param>
+    /// <param name="elapsedTime">Time elapsed since holding the mouse button</param>
+    /// <returns></returns>
     private IEnumerator ShootBall(Vector3 mousePosition, float elapsedTime)
     {
         isShooting = true;
-        // Effet sonore et animation
+        // Sound effect and animation
         ball.GetComponent<AudioSource>().Play();
         character.GetComponent<Animator>().SetTrigger("Shoot");
-        // Calcul des distances
+        // Distances calculation
         mousePosition.z = 1;
         float horizontalDistance = Camera.main.ScreenToWorldPoint(mousePosition).x - ball.transform.position.x;
         float verticalDistance = Camera.main.ScreenToWorldPoint(mousePosition).y - ball.transform.position.y;
         float distance = Mathf.Sqrt(Mathf.Pow(horizontalDistance, 2) + Mathf.Pow(verticalDistance, 2));
-        // Application de la fonction sinus
+        // Sinus function application
         float horizontalForce = BALL_FORCE * (horizontalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI / 2) + 1);
         float verticalForce = BALL_FORCE * (verticalDistance/distance) * (Mathf.Sin(elapsedTime + 3 * Mathf.PI/2) + 1);
-        // Attente de l'animation
+        // Waiting for the animation to reach the hit sequence
         yield return new WaitForSeconds(0.2f);
-        // Application des forces
+        // Applying forces
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         ballRb.AddForce(new Vector2(horizontalForce, verticalForce));
-        // Incrémentation du score  
-      
+        // Increment score
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IncrementScore();
         isShooting = false;
     }
 
+    /// <summary>
+    /// Position and fill the shooting arrow
+    /// </summary>
+    /// <param name="mousePosition">Current mouse position</param>
+    /// <param name="elapsedTime">Time elapsed since holding the mouse button</param>
     private void PositionArrow(Vector3 mousePosition, float elapsedTime)
     {
         if (currentArrow == null)
@@ -127,25 +192,16 @@ public class PlayerControl : MonoBehaviour {
         RotatePlayer(currentArrow.transform.eulerAngles.z);
     }
 
+    /// <summary>
+    /// Attests that the player is moving or not
+    /// </summary>
+    /// <returns>Boolean true if the player is moving or shooting</returns>
     private bool PlayerIsMoving()
     {
         if (ball != null)
         {
             Vector2 ballVelocity = ball.GetComponent<Rigidbody2D>().velocity;
             float ballForce = Mathf.Sqrt(Mathf.Pow(ballVelocity.x, 2) + Mathf.Pow(ballVelocity.y, 2));
-            /*RaycastHit2D[] verticalRaycastHits = Physics2D.RaycastAll(ball.transform.position, ball.transform.position + Vector3.down, ball.GetComponent<CircleCollider2D>().radius * 2);
-            //Debug.Log(ball.GetComponent<CircleCollider2D>().radius);
-            Debug.DrawLine(ball.transform.position, (ball.transform.position + Vector3.down * ball.GetComponent<CircleCollider2D>().radius*3));
-            bool collideWithSomething = false;
-            foreach (RaycastHit2D verticalRaycastHit in verticalRaycastHits)
-            {
-                Debug.Log(verticalRaycastHit.distance);
-                Debug.Log(verticalRaycastHit.collider.tag);
-                if (verticalRaycastHit.collider.tag != "Ball")
-                {
-                    collideWithSomething = true;
-                }
-            }*/
             return isShooting || ballForce >= 0.2f;
         } else
         {
@@ -154,6 +210,10 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Rotate the player left or right
+    /// </summary>
+    /// <param name="arrowRotation">Current rotation (in degree) of the shooting arrow (starting right)</param>
     private void RotatePlayer(float arrowRotation)
     {
         if (character != null)
@@ -165,31 +225,36 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Triggers teleportation if player is still
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator TeleportPlayerIfStill()
     {
         yield return new WaitForSeconds(0.2f);
         if (!PlayerIsMoving())
         {
-            TeleportPlayer();
-        }
-    }
-
-    private void TeleportPlayer()
-    {
-        if (character != null && ball != null)
-        {
-            Vector3 newCharacterPosition = ball.transform.position + new Vector3(0, -ball.GetComponent<CircleCollider2D>().bounds.size.y / 2);
-            float distance = Mathf.Sqrt(Mathf.Pow(character.transform.position.x - newCharacterPosition.x, 2) + Mathf.Pow(character.transform.position.y - newCharacterPosition.y, 2));
-            if (character.transform.position != newCharacterPosition && exitWarp == null && distance >= 0.5f)
+            if (character != null && ball != null)
             {
-                StartCoroutine(TeleportAndAnimate(newCharacterPosition));
+                Vector3 newCharacterPosition = ball.transform.position + new Vector3(0, -ball.GetComponent<CircleCollider2D>().bounds.size.y / 2);
+                float distance = Mathf.Sqrt(Mathf.Pow(character.transform.position.x - newCharacterPosition.x, 2) + Mathf.Pow(character.transform.position.y - newCharacterPosition.y, 2));
+                if (character.transform.position != newCharacterPosition && exitWarp == null && distance >= 0.5f)
+                {
+                    StartCoroutine(TeleportAndAnimate(newCharacterPosition));
+                }
             }
-        } else
-        {
-            Debug.Log("TeleportPlayer : character || ball = null !");
+            else
+            {
+                Debug.Log("TeleportPlayer : character || ball = null !");
+            }
         }
     }
 
+    /// <summary>
+    /// Effectively teleports and animates the character
+    /// </summary>
+    /// <param name="newPosition">New position to teleport the character to</param>
+    /// <returns></returns>
     private IEnumerator TeleportAndAnimate(Vector3 newPosition)
     {
         if (warpPrefab != null)
@@ -206,6 +271,10 @@ public class PlayerControl : MonoBehaviour {
         character.transform.position = newPosition;
     }
 
+    /// <summary>
+    /// Destroys teleportation animations
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator DestroyAnimation()
     {
         yield return new WaitForSeconds(0.7f);
@@ -214,9 +283,12 @@ public class PlayerControl : MonoBehaviour {
         isTeleporting = false;
     }
 
+    /// <summary>
+    /// Getter for the last player stable position
+    /// </summary>
+    /// <returns>Vector of the last stable position of the ball</returns>
     public Vector2 GetLastStablePosition()
     {
         return lastStablePosition;
     }
-
 }
