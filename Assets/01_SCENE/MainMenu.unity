@@ -1504,6 +1504,16 @@ Prefab:
       propertyPath: levelSceneName
       value: Lv11
       objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 622c862334182314c954ccd675c88325, type: 2}
   m_IsPrefabParent: 0
@@ -1719,13 +1729,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479a9f2947703bb4493e0a3ce5824a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 11400000, guid: 15d2df5eee015b6409efd3cea39c7014, type: 2}
-  - {fileID: 11400000, guid: 67680f88089256f4283cc38bb133a5ce, type: 2}
-  - {fileID: 11400000, guid: 170066c755cdd9e49bea5349167b4a60, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  silverCup: {fileID: 21300000, guid: c3b7df6621cd9814e88257a8de1e000a, type: 3}
+  goldCup: {fileID: 21300000, guid: 420395399de31664b9741f7eb9d951ad, type: 3}
 --- !u!114 &556359588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2864,21 @@ Prefab:
       propertyPath: levelName
       value: Balls of Steel
       objectReference: {fileID: 0}
+    - target: {fileID: 114352334013099248, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 622c862334182314c954ccd675c88325, type: 2}
   m_IsPrefabParent: 0
@@ -3258,16 +3278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479a9f2947703bb4493e0a3ce5824a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 11400000, guid: 7e4383976e49f644fa44945e6801b9cc, type: 2}
-  - {fileID: 11400000, guid: c13f1f45cd10d984ea7239b1738bbdc4, type: 2}
-  - {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
-  - {fileID: 11400000, guid: cf44a2d7a66050e46b8818727c5eb05b, type: 2}
-  - {fileID: 11400000, guid: af1ae1020a6a8b64797d352046ac63b2, type: 2}
-  - {fileID: 11400000, guid: 796323d36fa41824eab72453d723e477, type: 2}
-  - {fileID: 11400000, guid: faea5c19cc158c34ab6393c33fe847a4, type: 2}
-  - {fileID: 11400000, guid: b7738bcb16d726c4cac5b3869903d3db, type: 2}
-  - {fileID: 11400000, guid: 46a2a82a18c9de14c9e0fa95972b6726, type: 2}
+  silverCup: {fileID: 21300000, guid: c3b7df6621cd9814e88257a8de1e000a, type: 3}
+  goldCup: {fileID: 21300000, guid: 420395399de31664b9741f7eb9d951ad, type: 3}
 --- !u!114 &850734399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4683,6 +4695,16 @@ Prefab:
         type: 2}
       propertyPath: levelSceneName
       value: Lv10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 622c862334182314c954ccd675c88325, type: 2}
@@ -6228,6 +6250,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886346027863630, guid: 622c862334182314c954ccd675c88325,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114241887820421768, guid: 622c862334182314c954ccd675c88325, type: 2}
