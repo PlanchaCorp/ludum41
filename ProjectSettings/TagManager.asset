@@ -13,6 +13,7 @@ TagManager:
   - TotalText
   - levelSelector
   - Music
+  - MuteButton
   layers:
   - Default
   - TransparentFX

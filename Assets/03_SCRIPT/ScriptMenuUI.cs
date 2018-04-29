@@ -10,6 +10,9 @@ public class ScriptMenuUI : MonoBehaviour
     public GameObject MainMenuPanel;
     public GameObject SelectedLevelPanel;
 
+    public Sprite mutedSprite;
+    public Sprite unmutedSprite;
+
     public void Start()
     {
     }
@@ -40,5 +43,20 @@ public class ScriptMenuUI : MonoBehaviour
     {
         MainMenuPanel.SetActive(true);
         SelectedLevelPanel.SetActive(false);
+    }
+
+    public void ToggleMute()
+    {
+        GameObject music = GameObject.FindGameObjectWithTag("Music");
+        Image muteSprite = GameObject.FindGameObjectWithTag("MuteButton").GetComponent<Image>();
+        if (muteSprite == null || music == null) return;
+        bool musicPlays = music.GetComponent<BackgroundMusic>().ToggleMusic();
+        if (musicPlays)
+        {
+            muteSprite.sprite = unmutedSprite;
+        } else
+        {
+            muteSprite.sprite = mutedSprite;
+        }
     }
 }

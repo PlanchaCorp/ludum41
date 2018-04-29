@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BackgroundMusic : MonoBehaviour {
@@ -24,5 +22,17 @@ public class BackgroundMusic : MonoBehaviour {
     public void StopMusic()
     {
         _audioSource.Stop();
+    }
+
+    public bool ToggleMusic()
+    {
+        if (!_audioSource.isPlaying)
+        {
+            PlayMusic();
+        } else
+        {
+            StopMusic();
+        }
+        return _audioSource.isPlaying;
     }
 }

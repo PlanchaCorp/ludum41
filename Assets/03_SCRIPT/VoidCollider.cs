@@ -11,10 +11,6 @@ public class VoidCollider : MonoBehaviour {
     /// </summary>
     private GameObject ball;
     /// <summary>
-    /// First position of the ball
-    /// </summary>
-    private Vector3 ballInitialPosition;
-    /// <summary>
     /// Boolean true when the ball is in the water
     /// </summary>
     private bool isDrowning = false;
@@ -26,7 +22,6 @@ public class VoidCollider : MonoBehaviour {
     public void Start()
     {
         ball = GameObject.FindGameObjectWithTag("Ball");
-        ballInitialPosition = ball.transform.position;
     }
 
     /// <summary>
