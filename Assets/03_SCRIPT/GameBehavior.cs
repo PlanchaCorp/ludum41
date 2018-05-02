@@ -85,7 +85,7 @@ public class GameBehavior : MonoBehaviour {
     {
         GameObject[] scoreTexts = GameObject.FindGameObjectsWithTag("ScoreText");
         TextMeshProUGUI scoreCommentText = GameObject.Find("ScoreComment").GetComponent<TextMeshProUGUI>();
-        switch (levelPar - mapScore)
+        switch ( mapScore - levelPar)
         {
             case (2):
                 scoreCommentText.text = "Double Bogey";
