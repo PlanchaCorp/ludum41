@@ -10592,7 +10592,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BALL_FORCE: 400
-  DISTANCE_MAX: 1
   arrowPrefab: {fileID: 1065943660235078, guid: 7272ecf34e5305b4691e5b95d32fb715,
     type: 2}
   warpPrefab: {fileID: 1820362106417320, guid: 50e8cc9dcc8849f4fb8cf78a845ca044, type: 2}
@@ -24413,6 +24412,10 @@ Prefab:
       propertyPath: m_textInfo.wordCount
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1954038089379430, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
   m_IsPrefabParent: 0
@@ -25245,8 +25248,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -16, y: 8, z: 0}
     second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 7
+      m_TileIndex: 3
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -25267,9 +25270,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 76471c66a825f3e4d811f2c0d1a6d692, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 5a5809a60823cda4382673c5c07acdf3, type: 2}
-  - m_RefCount: 23
+  - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: 95d5ac23f78b09a4c9ff275f19a15b02, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 44091295d76b8ba478f4eb3fa69a2ef5, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 4bcc0e85f58a6a04aa6a20e2923519dd, type: 2}
@@ -25290,13 +25293,13 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300004, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 21300016, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300002, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300010, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
-  - m_RefCount: 24
+  - m_RefCount: 23
     m_Data: {fileID: 21300014, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
   - m_RefCount: 31
     m_Data: {fileID: 21300012, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
