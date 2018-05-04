@@ -47,7 +47,7 @@ public class VoidCollider : MonoBehaviour {
     /// <returns></returns>
     private IEnumerator Rollback()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Debug.Log(GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerControl>().GetLastStablePosition());
         ball.transform.position = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerControl>().GetLastStablePosition();
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();

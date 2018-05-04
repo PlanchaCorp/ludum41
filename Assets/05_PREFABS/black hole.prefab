@@ -21,10 +21,11 @@ GameObject:
   - component: {fileID: 4819861130924172}
   - component: {fileID: 212600653957069070}
   - component: {fileID: 250939926840021508}
+  - component: {fileID: 114372959036062962}
   - component: {fileID: 50674479849359178}
-  - component: {fileID: 58425716613337994}
   - component: {fileID: 58202104370096822}
   - component: {fileID: 95090372530896978}
+  - component: {fileID: 58417404763016638}
   m_Layer: 0
   m_Name: black hole
   m_TagString: Untagged
@@ -39,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1002435347091826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93, y: 6.28, z: 0}
-  m_LocalScale: {x: 0.960902, y: 0.960902, z: 0.960902}
+  m_LocalPosition: {x: -32.08, y: 1.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -80,7 +81,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.81
---- !u!58 &58425716613337994
+--- !u!58 &58417404763016638
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -92,9 +93,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032550868, y: 0}
+  m_Offset: {x: -0.0000038146973, y: -0.000000059604645}
   serializedVersion: 2
-  m_Radius: 0.2558671
+  m_Radius: 0.43
 --- !u!95 &95090372530896978
 Animator:
   serializedVersion: 3
@@ -112,6 +113,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114372959036062962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002435347091826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105b74ed4166eb140a79b6f3232dc535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalCenter: {fileID: 58417404763016638}
+  radius: 3.4
+  magnitude: -74.14
 --- !u!212 &212600653957069070
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -145,9 +160,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b96e28715fe760e47a01cd0025305630, type: 3}
-  m_Color: {r: 0.9558824, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -166,7 +181,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_ForceMagnitude: -10
   m_ForceVariation: 0
   m_DistanceScale: 1
