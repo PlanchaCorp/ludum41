@@ -11,12 +11,14 @@ public class GameBehavior : MonoBehaviour {
     public string levelName;
     public string levelDialog;
     public int levelPar;
+    static private bool isPaused = false;
 
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
 
     TextMeshProUGUI dialogue;
     TextMeshProUGUI title;
     Image dialogueFrame;
+    Canvas pauseCanvas;
 
     public void ResetScore()
     {
@@ -49,7 +51,6 @@ public class GameBehavior : MonoBehaviour {
         {
             PlayerPrefs.SetInt(activeSceneName, mapScore);
         }
-        Debug.Log(PlayerPrefs.GetInt(activeSceneName) + " - " + activeSceneName);
     }
 
 
@@ -65,20 +66,32 @@ public class GameBehavior : MonoBehaviour {
         dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
 
         dialogue.text = levelDialog;
+
+        pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MainMenu");
+            ChangePauseState(!isPaused);
         }
-        if (Input.GetMouseButtonDown(0)) { 
+        if (Input.GetMouseButtonDown(0) && !isPaused) { 
             dialogue.enabled = false;
             title.enabled = false;
             dialogueFrame.enabled = false;
        
         }
+    }
+
+    public void ChangePauseState(bool doPause)
+    {
+        isPaused = doPause;
+        pauseCanvas.enabled = isPaused;
+    }
+    static public bool IsPaused()
+    {
+        return isPaused;
     }
 
     private void UpdateScore()

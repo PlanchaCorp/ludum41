@@ -7,7 +7,7 @@ public class menuBeaviour : MonoBehaviour {
 
   
 
-public void ChangeLevel()
+    public void ChangeLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1;
@@ -18,6 +18,11 @@ public void ChangeLevel()
         this.GetComponentInParent<Canvas>().enabled  = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+    }
+
+    public void Unpause()
+    {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().ChangePauseState(false);
     }
 
     public void GoToMenu()
