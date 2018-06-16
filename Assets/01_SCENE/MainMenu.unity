@@ -2862,7 +2862,7 @@ Prefab:
     - target: {fileID: 114241887820421768, guid: 622c862334182314c954ccd675c88325,
         type: 2}
       propertyPath: levelName
-      value: Balls of Steel
+      value: Unknown Whereabouts
       objectReference: {fileID: 0}
     - target: {fileID: 114352334013099248, guid: 622c862334182314c954ccd675c88325,
         type: 2}
@@ -4103,7 +4103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelData: {fileID: 0}
   levelId: 1
-  levelName: Hole the day
+  levelName: Lonely Peak
   levelPar: 1
   levelSceneName: Lv01
   levelname: {fileID: 951838075}
