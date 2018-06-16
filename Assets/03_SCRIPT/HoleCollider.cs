@@ -17,7 +17,6 @@ public class HoleCollider : MonoBehaviour {
     /// <param name="other"></param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag);
         if (other.tag == "Ball")
         {
             Time.timeScale = 0;
@@ -30,7 +29,6 @@ public class HoleCollider : MonoBehaviour {
     /// </summary>
     private void Victory()
     {
-        Debug.Log("Victory");
         canvas.enabled = true;
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().SetLevelScore();
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().UpdateTotal();

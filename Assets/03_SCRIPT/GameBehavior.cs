@@ -51,7 +51,6 @@ public class GameBehavior : MonoBehaviour {
         {
             PlayerPrefs.SetInt(activeSceneName, mapScore);
         }
-        Debug.Log(PlayerPrefs.GetInt(activeSceneName) + " - " + activeSceneName);
     }
 
 
