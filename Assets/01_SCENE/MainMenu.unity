@@ -1715,7 +1715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.26000977, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0.26000977, y: 0}
   m_SizeDelta: {x: 122.99994, y: 99.67926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556359587
@@ -2058,7 +2058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641479275
@@ -2862,7 +2862,7 @@ Prefab:
     - target: {fileID: 114241887820421768, guid: 622c862334182314c954ccd675c88325,
         type: 2}
       propertyPath: levelName
-      value: Balls of Steel
+      value: Unknown Whereabouts
       objectReference: {fileID: 0}
     - target: {fileID: 114352334013099248, guid: 622c862334182314c954ccd675c88325,
         type: 2}
@@ -2899,7 +2899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &826506967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3339,7 +3339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.000030517578}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 122.99994, y: 99.67926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &871435951
@@ -4103,7 +4103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelData: {fileID: 0}
   levelId: 1
-  levelName: Hole the day
+  levelName: Lonely Peak
   levelPar: 1
   levelSceneName: Lv01
   levelname: {fileID: 951838075}

@@ -8,7 +8,8 @@ public class HoleCollider : MonoBehaviour {
     /// <summary>
     /// Victory canvas
     /// </summary>
-    public Canvas canvas;
+    [SerializeField]
+     Canvas canvas;
 
   
     /// <summary>
