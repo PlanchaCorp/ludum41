@@ -11,12 +11,15 @@ public class GameBehavior : MonoBehaviour {
     public string levelName;
     public string levelDialog;
     public int levelPar;
+    static private bool isPaused = false;
 
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
 
+    
     TextMeshProUGUI dialogue;
     TextMeshProUGUI title;
     Image dialogueFrame;
+    Canvas pauseCanvas;
 
     public void ResetScore()
     {
@@ -49,14 +52,15 @@ public class GameBehavior : MonoBehaviour {
         {
             PlayerPrefs.SetInt(activeSceneName, mapScore);
         }
-        Debug.Log(PlayerPrefs.GetInt(activeSceneName) + " - " + activeSceneName);
     }
 
 
     
 	void Start () {
         ResetScore();
-        
+       
+
+
         gameObject.GetComponent<GameBehavior>().UpdatePar();
         title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
         title.text = (levelId) + ". " + levelName;
@@ -65,20 +69,34 @@ public class GameBehavior : MonoBehaviour {
         dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
 
         dialogue.text = levelDialog;
+
+        pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
+
+        ChangePauseState(false);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MainMenu");
+            ChangePauseState(!isPaused);
         }
-        if (Input.GetMouseButtonDown(0)) { 
+        if (Input.GetMouseButtonDown(0) && !isPaused) { 
             dialogue.enabled = false;
             title.enabled = false;
             dialogueFrame.enabled = false;
        
         }
+    }
+
+    public void ChangePauseState(bool doPause)
+    {
+        isPaused = doPause;
+        pauseCanvas.enabled = isPaused;
+    }
+    static public bool IsPaused()
+    {
+        return isPaused;
     }
 
     private void UpdateScore()
@@ -138,29 +156,7 @@ public class GameBehavior : MonoBehaviour {
         
     }
 
-    public void UpdateTotal()
-    {
-        GameObject[] totalTexts = GameObject.FindGameObjectsWithTag("TotalText");
-        TextMeshProUGUI holeText = GameObject.Find("holeNum").GetComponent<TextMeshProUGUI>(); 
-        foreach (GameObject parText in totalTexts)
-        {
-            TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
-            text.text = "";
-            int sum = 0;
-            foreach (KeyValuePair<int,int> score in scores)
-            {
-               
-                sum += score.Value;
-                holeText.text += score.Key + "  ";
-                text.text += score.Value + "  ";
-            }
-            text.text += sum;
-            holeText.text += "T";
-
-
-
-        }
-    }
+    
 
 
 }
