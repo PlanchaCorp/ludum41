@@ -31,7 +31,6 @@ public class HoleCollider : MonoBehaviour {
     {
         canvas.enabled = true;
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().SetLevelScore();
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().UpdateTotal();
     }
 
 }

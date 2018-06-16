@@ -15,6 +15,7 @@ public class GameBehavior : MonoBehaviour {
 
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
 
+    
     TextMeshProUGUI dialogue;
     TextMeshProUGUI title;
     Image dialogueFrame;
@@ -57,7 +58,9 @@ public class GameBehavior : MonoBehaviour {
     
 	void Start () {
         ResetScore();
-        
+       
+
+
         gameObject.GetComponent<GameBehavior>().UpdatePar();
         title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
         title.text = (levelId) + ". " + levelName;
@@ -68,6 +71,8 @@ public class GameBehavior : MonoBehaviour {
         dialogue.text = levelDialog;
 
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
+
+        ChangePauseState(false);
     }
 
     void Update()
@@ -151,29 +156,7 @@ public class GameBehavior : MonoBehaviour {
         
     }
 
-    public void UpdateTotal()
-    {
-        GameObject[] totalTexts = GameObject.FindGameObjectsWithTag("TotalText");
-        TextMeshProUGUI holeText = GameObject.Find("holeNum").GetComponent<TextMeshProUGUI>(); 
-        foreach (GameObject parText in totalTexts)
-        {
-            TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
-            text.text = "";
-            int sum = 0;
-            foreach (KeyValuePair<int,int> score in scores)
-            {
-               
-                sum += score.Value;
-                holeText.text += score.Key + "  ";
-                text.text += score.Value + "  ";
-            }
-            text.text += sum;
-            holeText.text += "T";
-
-
-
-        }
-    }
+    
 
 
 }
