@@ -21834,6 +21834,11 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!223 &1115230798 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 223361650241746868, guid: ef16579f534592048babac4c1d0a6a9e,
+    type: 2}
+  m_PrefabInternal: {fileID: 106071812}
 --- !u!1 &1120402468
 GameObject:
   m_ObjectHideFlags: 0
@@ -23675,6 +23680,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114221259301694312, guid: 08b6c1c5c14abf543ad168b9e0a1a228,
+        type: 2}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1115230798}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08b6c1c5c14abf543ad168b9e0a1a228, type: 2}
   m_IsPrefabParent: 0
