@@ -9,10 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: levle2
+  m_Name: level8
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  id: 1
-  name: balls of steels
-  sceneName: 
+  id: 8
+  name: Down the pit
+  sceneName: Lv08
   par: 2
   score: 0
+  dialogue: Where they all have built and all have created

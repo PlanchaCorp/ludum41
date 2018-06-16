@@ -12,6 +12,8 @@ TagManager:
   - Background
   - TotalText
   - levelSelector
+  - Music
+  - MuteButton
   layers:
   - Default
   - TransparentFX

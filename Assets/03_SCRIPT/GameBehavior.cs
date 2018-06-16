@@ -1,12 +1,23 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameBehavior : MonoBehaviour {
     private int mapScore;
-    public  int mapPar = 0;
-    public int levelNumber = 0;
+    public LevelData levelData;
+    public int levelId;
+    public string levelName;
+    public string levelDialog;
+    public int levelPar;
+
     public static Dictionary<int,int> scores = new Dictionary<int,int>();
+
+    TextMeshProUGUI dialogue;
+    TextMeshProUGUI title;
+    Image dialogueFrame;
+
     public void ResetScore()
     {
         mapScore = 0;
@@ -25,28 +36,56 @@ public class GameBehavior : MonoBehaviour {
 
     public void SetLevelScore()
     {
-        if (scores.ContainsKey(levelNumber))
+        if (scores.ContainsKey(levelId))
         {
-            scores[levelNumber] = mapScore;
+            scores[levelId] = mapScore;
         } else
         {
-            scores.Add(levelNumber, mapScore);
+            scores.Add(levelId, mapScore);
         }
-      
+
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        if (PlayerPrefs.GetInt(activeSceneName) > mapScore || PlayerPrefs.GetInt(activeSceneName) == 0)
+        {
+            PlayerPrefs.SetInt(activeSceneName, mapScore);
+        }
+        Debug.Log(PlayerPrefs.GetInt(activeSceneName) + " - " + activeSceneName);
     }
 
 
     
 	void Start () {
         ResetScore();
+        
         gameObject.GetComponent<GameBehavior>().UpdatePar();
+        title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
+        title.text = (levelId) + ". " + levelName;
+        
+        dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
+        dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
+
+        dialogue.text = levelDialog;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        if (Input.GetMouseButtonDown(0)) { 
+            dialogue.enabled = false;
+            title.enabled = false;
+            dialogueFrame.enabled = false;
+       
+        }
     }
 
     private void UpdateScore()
     {
         GameObject[] scoreTexts = GameObject.FindGameObjectsWithTag("ScoreText");
         TextMeshProUGUI scoreCommentText = GameObject.Find("ScoreComment").GetComponent<TextMeshProUGUI>();
-        switch ( mapScore - mapPar)
+        switch (levelPar - mapScore)
         {
             case (2):
                 scoreCommentText.text = "Double Bogey";
@@ -79,10 +118,13 @@ public class GameBehavior : MonoBehaviour {
         {
             
             TextMeshProUGUI text = scoreText.GetComponent<TextMeshProUGUI>();
-            text.text = mapScore + "";
-
-            
+            text.text = mapScore + ""; 
         }
+    }
+
+    public bool IsDialogPrinted()
+    {
+        return dialogue.enabled;
     }
 
     public void UpdatePar()
@@ -91,7 +133,7 @@ public class GameBehavior : MonoBehaviour {
         foreach (GameObject parText in parTexts)
         {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
-            text.text = mapPar + "";
+            text.text = levelPar + "";
         }
         
     }
@@ -112,7 +154,6 @@ public class GameBehavior : MonoBehaviour {
                 holeText.text += score.Key + "  ";
                 text.text += score.Value + "  ";
             }
-            Debug.Log(sum);
             text.text += sum;
             holeText.text += "T";
 

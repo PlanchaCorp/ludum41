@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: level3
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  id: 2
-  name: niveau 3
-  sceneName: 
+  id: 3
+  name: Scorched land
+  sceneName: Lv03
   par: 3
-  score: 0
+  score: 1
+  dialogue: I ought to only golf in this world of nightmare.

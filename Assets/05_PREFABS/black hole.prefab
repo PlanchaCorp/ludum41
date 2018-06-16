@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50674479849359178}
   - component: {fileID: 58425716613337994}
   - component: {fileID: 58202104370096822}
+  - component: {fileID: 95090372530896978}
   m_Layer: 0
   m_Name: black hole
   m_TagString: Untagged
@@ -94,6 +95,23 @@ CircleCollider2D:
   m_Offset: {x: -0.032550868, y: 0}
   serializedVersion: 2
   m_Radius: 0.2558671
+--- !u!95 &95090372530896978
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002435347091826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0fdabe55777602743937a145ee23e3b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &212600653957069070
 SpriteRenderer:
   m_ObjectHideFlags: 1

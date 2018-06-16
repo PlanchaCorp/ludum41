@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 
 [CreateAssetMenu(fileName = "New Level ", menuName= "levelData")]
 public class LevelData : ScriptableObject 
@@ -9,4 +8,5 @@ public class LevelData : ScriptableObject
     public string sceneName;
     public int par;
     public int score;
+    public string dialogue;
 }

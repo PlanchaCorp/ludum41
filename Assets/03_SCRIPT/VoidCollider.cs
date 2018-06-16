@@ -1,19 +1,33 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Water behavior
+/// </summary>
 public class VoidCollider : MonoBehaviour {
-    GameObject ball;
-    Vector3 ballInitialPosition;
-    bool isDrowning = false;
+    /// <summary>
+    /// Variable referencing the ball
+    /// </summary>
+    private GameObject ball;
+    /// <summary>
+    /// Boolean true when the ball is in the water
+    /// </summary>
+    private bool isDrowning = false;
 
 
+    /// <summary>
+    /// Initialize the ball reference and its position
+    /// </summary>
     public void Start()
     {
         ball = GameObject.FindGameObjectWithTag("Ball");
-        ballInitialPosition = ball.transform.position;
     }
 
+    /// <summary>
+    /// Action when the ball just reached the water
+    /// </summary>
+    /// <param name="other"></param>
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Ball" && !isDrowning)
@@ -27,6 +41,10 @@ public class VoidCollider : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Teleports the ball to its last stable position
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Rollback()
     {
         yield return new WaitForSeconds(2);
