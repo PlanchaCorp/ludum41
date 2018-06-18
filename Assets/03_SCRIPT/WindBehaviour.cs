@@ -32,7 +32,7 @@ public class WindBehaviour : MonoBehaviour {
 
         wind.AddComponent<AreaEffector2D>();
         AreaEffector2D windEffect = wind.GetComponent<AreaEffector2D>();
-        windEffect.forceAngle = Quaternion.Inverse(transform.rotation).eulerAngles.z;
+        windEffect.forceAngle = 90;
 
 
         GameObject windAnimation = GameObject.Find("windGfcs");
