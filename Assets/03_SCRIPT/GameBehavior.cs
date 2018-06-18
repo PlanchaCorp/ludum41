@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameBehavior : MonoBehaviour {
+public class GameBehavior : MonoBehaviour
+{
     private int mapScore;
     public LevelData levelData;
     public int levelId;
@@ -13,9 +14,9 @@ public class GameBehavior : MonoBehaviour {
     public int levelPar;
     static private bool isPaused = false;
 
-    public static Dictionary<int,int> scores = new Dictionary<int,int>();
+    public static Dictionary<int, int> scores = new Dictionary<int, int>();
 
-    
+
     TextMeshProUGUI dialogue;
     TextMeshProUGUI title;
     Image dialogueFrame;
@@ -42,7 +43,8 @@ public class GameBehavior : MonoBehaviour {
         if (scores.ContainsKey(levelId))
         {
             scores[levelId] = mapScore;
-        } else
+        }
+        else
         {
             scores.Add(levelId, mapScore);
         }
@@ -55,8 +57,9 @@ public class GameBehavior : MonoBehaviour {
     }
 
 
-    
-	void Start () {
+
+    void Start()
+    {
         ResetScore();
 
 
@@ -64,13 +67,13 @@ public class GameBehavior : MonoBehaviour {
         gameObject.GetComponent<GameBehavior>().UpdatePar();
         title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
         title.text = (levelId) + ". " + levelName;
-        
+
         dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
         dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
 
         dialogue.text = levelDialog;
 
-        
+
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
 
         ChangePauseState(false);
@@ -83,11 +86,12 @@ public class GameBehavior : MonoBehaviour {
             // ChangePauseState(!isPaused);
             SetPause();
         }
-        if (Input.GetMouseButtonDown(0) && !isPaused) { 
+        if (Input.GetMouseButtonDown(0) && !isPaused)
+        {
             dialogue.enabled = false;
             title.enabled = false;
             dialogueFrame.enabled = false;
-       
+
         }
     }
 
@@ -102,10 +106,11 @@ public class GameBehavior : MonoBehaviour {
         pauseCanvas.enabled = false;
     }
 
-    
+
 
     public void ChangePauseState(bool doPause)
     {
+        Time.timeScale = 1;
         isPaused = doPause;
         pauseCanvas.enabled = isPaused;
     }
@@ -118,7 +123,7 @@ public class GameBehavior : MonoBehaviour {
     {
         GameObject[] scoreTexts = GameObject.FindGameObjectsWithTag("ScoreText");
         TextMeshProUGUI scoreCommentText = GameObject.Find("ScoreComment").GetComponent<TextMeshProUGUI>();
-        switch ( mapScore - levelPar)
+        switch (mapScore - levelPar)
         {
             case (2):
                 scoreCommentText.text = "Double Bogey";
@@ -149,9 +154,9 @@ public class GameBehavior : MonoBehaviour {
         }
         foreach (GameObject scoreText in scoreTexts)
         {
-            
+
             TextMeshProUGUI text = scoreText.GetComponent<TextMeshProUGUI>();
-            text.text = mapScore + ""; 
+            text.text = mapScore + "";
         }
     }
 
@@ -168,10 +173,10 @@ public class GameBehavior : MonoBehaviour {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
             text.text = levelPar + "";
         }
-        
+
     }
 
-    
+
 
 
 }
