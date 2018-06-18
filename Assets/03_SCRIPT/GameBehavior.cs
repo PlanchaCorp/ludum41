@@ -58,9 +58,9 @@ public class GameBehavior : MonoBehaviour {
     
 	void Start () {
         ResetScore();
-       
 
 
+        Time.timeScale = 1;
         gameObject.GetComponent<GameBehavior>().UpdatePar();
         title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
         title.text = (levelId) + ". " + levelName;
@@ -70,6 +70,7 @@ public class GameBehavior : MonoBehaviour {
 
         dialogue.text = levelDialog;
 
+        
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
 
         ChangePauseState(false);
@@ -79,7 +80,8 @@ public class GameBehavior : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ChangePauseState(!isPaused);
+            // ChangePauseState(!isPaused);
+            SetPause();
         }
         if (Input.GetMouseButtonDown(0) && !isPaused) { 
             dialogue.enabled = false;
@@ -88,6 +90,19 @@ public class GameBehavior : MonoBehaviour {
        
         }
     }
+
+    public void SetPause()
+    {
+        Time.timeScale = 0;
+        pauseCanvas.enabled = true;
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        pauseCanvas.enabled = false;
+    }
+
+    
 
     public void ChangePauseState(bool doPause)
     {

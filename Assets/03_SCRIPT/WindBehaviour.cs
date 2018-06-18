@@ -35,9 +35,9 @@ public class WindBehaviour : MonoBehaviour {
         windEffect.forceAngle = 90;
 
 
-        GameObject windAnimation = GameObject.Find("windGfcs");
+        GameObject windAnimation = this.transform.Find("windGfcs").gameObject;
         windAnimation.transform.localScale = new Vector3(1, effectArea, 1);
-        windAnimation.transform.localPosition = new Vector2(windAnimation.transform.localPosition.x, windAnimation.transform.localPosition.y + effectArea / 2);
+        windAnimation.transform.localPosition = new Vector2(0, effectArea / 2);
         
 
         windEffect.forceMagnitude = windStrength;
