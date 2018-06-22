@@ -41989,10 +41989,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData: {fileID: 0}
   levelId: 0
-  levelName: TUTO
-  levelDialog: Use your mouse to push the ball !                      Do not fall
-    into the water                              Be careful with red and blue portal
-    !
+  levelName: Landmarks
+  levelDialog: Insert lorem ipsum here
   levelPar: 7
 --- !u!114 &825916480
 MonoBehaviour:
