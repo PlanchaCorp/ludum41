@@ -204,8 +204,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 0. Title
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: da76297d946e7fb438542880c2103ca2, type: 2}
-  m_sharedMaterial: {fileID: 21046152296233998, guid: da76297d946e7fb438542880c2103ca2,
+  m_fontAsset: {fileID: 11400000, guid: 9f19683e37dab7f498e80283e507d49d, type: 2}
+  m_sharedMaterial: {fileID: 21800032830589816, guid: 9f19683e37dab7f498e80283e507d49d,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -230,10 +230,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
+  m_fontSize: 48
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -433,8 +433,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 45.17
-  m_fontSizeBase: 45.17
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: 1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_enableKerning: 1
@@ -478,7 +478,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 1
@@ -568,8 +568,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: some interisting message send to the player
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6c8cd7921087723439176e797706d1dc, type: 2}
-  m_sharedMaterial: {fileID: 21686168742898846, guid: 6c8cd7921087723439176e797706d1dc,
+  m_fontAsset: {fileID: 11400000, guid: 7da17c019a66ec242a7cf43348e71354, type: 2}
+  m_sharedMaterial: {fileID: 21364601079238742, guid: 7da17c019a66ec242a7cf43348e71354,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -594,10 +594,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
+  m_fontSize: 18
   m_fontSizeBase: 10
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 37
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_enableKerning: 1
@@ -720,7 +720,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2dfd2a0d2a1844b4fa9858809c5788c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3fd57fd668551848a9fe4a5c3d2407b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -869,8 +869,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -39.28, y: 0}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: 25, y: 0}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224102199556173838
 RectTransform:
@@ -949,7 +949,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 134, y: 50}
-  m_SizeDelta: {x: 341, y: 50}
+  m_SizeDelta: {x: 132, y: 47.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224806586140990950
 RectTransform:
@@ -959,14 +959,14 @@ RectTransform:
   m_GameObject: {fileID: 1025419107178856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 62.729656, y: 62.729656, z: 62.729656}
+  m_LocalScale: {x: 90, y: 90, z: 1}
   m_Children: []
   m_Father: {fileID: 224380716601104204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: 50}
+  m_AnchoredPosition: {x: -80, y: 80}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224853949587215642
