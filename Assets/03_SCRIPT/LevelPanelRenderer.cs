@@ -6,35 +6,40 @@ using UnityEngine.SceneManagement;
 public class LevelPanelRenderer : MonoBehaviour {
 
     public LevelData LevelData;
-    public int levelId;
-    public string levelName;
-    public int levelPar;
-    public string levelSceneName;
 
-    public TextMeshProUGUI levelname;
-    public TextMeshProUGUI parName;
-    public TextMeshProUGUI scoreName;
+
+ 
+
+    private void Start()
+    {
+        SetInfo();
+    }
 
     // Use this for initialization
-    public void SetInfo (Sprite silverCup, Sprite goldCup) {
-        int playerScore = PlayerPrefs.GetInt(levelSceneName);
-        levelname.text = (levelId) + ". " + levelName;
-        parName.text = levelPar + "";
-        scoreName.text = playerScore + "";
-        // Setting a silver or gold trophy if the player did succeed the level, and reached the par score
-        if (playerScore != 0 && playerScore <= levelPar)
+ 
+        public void SetInfo()
         {
-            transform.Find("Trophy").gameObject.GetComponent<Image>().sprite = goldCup;
-        } else if (playerScore != 0)
-        {
-            transform.Find("Trophy").gameObject.GetComponent<Image>().sprite = silverCup;
+            TextMeshProUGUI levelname = this.transform.Find("LevelName").GetComponent<TextMeshProUGUI>();
+
+            TextMeshProUGUI scoreName = this.transform.Find("ScoreText").GetComponent<TextMeshProUGUI>();
+
+            TextMeshProUGUI parName = this.transform.Find("ParText").GetComponent<TextMeshProUGUI>();
+
+
+            int playerScore = PlayerPrefs.GetInt(LevelData.sceneName);
+            levelname.text = (LevelData.id) + ". " + LevelData.name;
+            parName.text = LevelData.par + "";
+            scoreName.text = playerScore + "";
+
+            // Setting a silver or gold trophy if the player did succeed the level, and reached the par score
+            this.transform.Find("Trophy").GetComponent<TrophyManager>().SetTrophyImage(playerScore, LevelData.par);
+
         }
-        
-	}
+    
 
     public void ChangeLevel()
     {
-        SceneManager.LoadScene(levelSceneName);
+        SceneManager.LoadScene(LevelData.sceneName);
     }
 
   

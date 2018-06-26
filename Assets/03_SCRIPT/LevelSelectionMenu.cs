@@ -1,34 +1,73 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSelectionMenu : MonoBehaviour {
     
-    LevelPanelRenderer[] panels;
-    public Sprite silverCup;
-    public Sprite goldCup;
+    [SerializeField]
+    private List<LevelData> levels;
+    [SerializeField]
+    private GameObject levelPanelPrefab;
+
+    [SerializeField]
+    private Button btnNext;
+
+    [SerializeField]
+    private Button btnPrev;
 
 
-	// Use this for initialization
-	void Start () {
-        panels = gameObject.GetComponentsInChildren<LevelPanelRenderer>();// FindGameObjectsWithTag("levelSelector");
+    public int offset = 0;
+    public int size = 6;
     
-        for (int i =0; i < panels.Length; i++)
-        {
-            LevelPanelRenderer l = panels[i];
-            l.SetInfo(silverCup, goldCup);
-        }
-	}
+
+    // Use this for initialization
+    void Start () {
+
+        LoadLevels();
+    }
     public void NextPanel()
     {
-        this.enabled = false;
+        offset = offset +6;
+        LoadLevels();
+    }
+    public void PreviousPanel()
+    {
+        offset = offset - 6;
+        LoadLevels();
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
-    void LoadLevel()
+    public void LoadLevels()
     {
 
+        btnPrev.interactable = true;
+        btnNext.interactable = true;
+
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < size; i++)
+        {
+
+            levelPanelPrefab.GetComponent<LevelPanelRenderer>().LevelData = levels[i+offset];
+            //levelPanelPrefab.GetComponent<RectTransform>().localPosition = new Vector2((i % 3) * offsetX, 0);
+            Instantiate(levelPanelPrefab, this.transform);
+            levelPanelPrefab.name = levels[i+offset].name;
+
+            //  SetInfo(levels[i]);
+        }
+        if(offset == 0)
+        {
+            btnPrev.interactable = false;
+        }
+        if(offset + size == levels.Count)
+        {
+            btnNext.interactable = false;
+        }
     }
+    
+
 }
