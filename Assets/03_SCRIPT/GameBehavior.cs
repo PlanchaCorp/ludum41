@@ -75,16 +75,19 @@ public class GameBehavior : MonoBehaviour
 
 
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
-
-        ChangePauseState(false);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // ChangePauseState(!isPaused);
-            SetPause();
+            if (!isPaused)
+            {
+                SetPause();
+            } else
+            {
+                Resume();
+            }
         }
         if (Input.GetMouseButtonDown(0) && !isPaused)
         {
@@ -97,24 +100,18 @@ public class GameBehavior : MonoBehaviour
 
     public void SetPause()
     {
+        isPaused = true;
         Time.timeScale = 0;
         pauseCanvas.enabled = true;
     }
     public void Resume()
     {
+        isPaused = false;
         Time.timeScale = 1;
         pauseCanvas.enabled = false;
     }
 
-
-
-    public void ChangePauseState(bool doPause)
-    {
-        Time.timeScale = 1;
-        isPaused = doPause;
-        pauseCanvas.enabled = isPaused;
-    }
-    static public bool IsPaused()
+    public bool IsPaused()
     {
         return isPaused;
     }
