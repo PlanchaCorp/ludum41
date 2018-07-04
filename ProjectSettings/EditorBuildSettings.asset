@@ -66,6 +66,9 @@ EditorBuildSettings:
     path: Assets/01_SCENE/Lv18.unity
     guid: c63b34150a7f87b468173ebeb22e246e
   - enabled: 1
+    path: Assets/01_SCENE/Credits.unity
+    guid: 65adf21a029f2e74ca79d22a876cee88
+  - enabled: 1
     path: Assets/01_SCENE/MainMenu.unity
     guid: 574a5f8862462914799557c0ee7724ff
   m_configObjects: {}
