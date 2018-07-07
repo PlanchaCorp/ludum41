@@ -2156,13 +2156,13 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 979541561}
+  m_TargetGraphic: {fileID: 1170034468}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 233419715}
-        m_MethodName: loadScene
-        m_Mode: 5
+        m_MethodName: BtnPlay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2279,13 +2279,13 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 979541561}
+  m_TargetGraphic: {fileID: 1376701822}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 233419715}
-        m_MethodName: loadScene
-        m_Mode: 5
+        m_MethodName: quit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
