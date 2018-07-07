@@ -83,7 +83,7 @@ public class PortalManager : MonoBehaviour {
            Rigidbody2D rigidbody =  ball.GetComponent<Rigidbody2D>();
             Vector2 speed = rigidbody.velocity;
             bool touchCenter = rigidbody.IsTouching(portalCenter);
-            if(touchCenter == true && (speed.x <5 && speed.y < 5))
+            if(touchCenter == true && (speed.x <3 && speed.y < 3))
             {
                
                    Vector3 lastPos = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerControl>().GetLastStablePosition();
