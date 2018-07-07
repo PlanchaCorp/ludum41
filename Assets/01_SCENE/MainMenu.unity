@@ -1382,11 +1382,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67680f88089256f4283cc38bb133a5ce, type: 2}
   - {fileID: 11400000, guid: 170066c755cdd9e49bea5349167b4a60, type: 2}
   - {fileID: 11400000, guid: f7e25a15d9dfae543837e1bf96a1656e, type: 2}
-  - {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
-  - {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
-  - {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
-  - {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
-  - {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
+  - {fileID: 11400000, guid: 22d73e6d548f28d4a92366acb9de0a67, type: 2}
+  - {fileID: 11400000, guid: fb41a9190b46b154d8df1550def90a44, type: 2}
+  - {fileID: 11400000, guid: b288378157565ee4d8570d205f678ba9, type: 2}
+  - {fileID: 11400000, guid: e1186c9035f768246918897242c646ba, type: 2}
+  - {fileID: 11400000, guid: 05ce4a2cbb406424c83f14f587727221, type: 2}
   levelPanelPrefab: {fileID: 1712134160777046, guid: 622c862334182314c954ccd675c88325,
     type: 2}
   btnNext: {fileID: 950370111}
@@ -1751,11 +1751,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2470,11 +2470,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2624,11 +2624,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
