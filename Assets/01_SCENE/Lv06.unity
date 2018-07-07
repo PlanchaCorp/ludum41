@@ -4237,6 +4237,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: -7, y: 7, z: 0}
+    second:
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -2, y: 7, z: 0}
     second:
       m_TileIndex: 7
@@ -4615,7 +4624,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 887706003f30df247b62f08f1ed5df8b, type: 2}
   - m_RefCount: 19
     m_Data: {fileID: 11400000, guid: 4bcc0e85f58a6a04aa6a20e2923519dd, type: 2}
-  - m_RefCount: 92
+  - m_RefCount: 93
     m_Data: {fileID: 11400000, guid: 95d5ac23f78b09a4c9ff275f19a15b02, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 192d9f61ed9ae4d4980e2f027dba724b, type: 2}
@@ -4642,7 +4651,7 @@ Tilemap:
     m_Data: {fileID: 21300018, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300026, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
-  - m_RefCount: 92
+  - m_RefCount: 93
     m_Data: {fileID: 21300014, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300004, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
@@ -4653,7 +4662,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300030, guid: c21b7077f7eda6c43b9fb35685c2846e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 147
+  - m_RefCount: 148
     m_Data:
       e00: 1
       e01: 0
@@ -4672,7 +4681,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 147
+  - m_RefCount: 148
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 0.63529414, g: 0.69411767, b: 0.7411765, a: 1}
@@ -23354,6 +23363,11 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224080502944712372, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 218.51999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
