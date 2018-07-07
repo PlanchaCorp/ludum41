@@ -8,10 +8,10 @@ public class GameBehavior : MonoBehaviour
 {
     private int mapScore;
     public LevelData levelData;
-    public int levelId;
+   /* public int levelId;
     public string levelName;
     public string levelDialog;
-    public int levelPar;
+    public int levelPar;*/
     static private bool isPaused = false;
 
     public static Dictionary<int, int> scores = new Dictionary<int, int>();
@@ -40,13 +40,13 @@ public class GameBehavior : MonoBehaviour
 
     public void SetLevelScore()
     {
-        if (scores.ContainsKey(levelId))
+        if (scores.ContainsKey(levelData.id))
         {
-            scores[levelId] = mapScore;
+            scores[levelData.id] = mapScore;
         }
         else
         {
-            scores.Add(levelId, mapScore);
+            scores.Add(levelData.id, mapScore);
         }
 
         string activeSceneName = SceneManager.GetActiveScene().name;
@@ -66,12 +66,12 @@ public class GameBehavior : MonoBehaviour
         Time.timeScale = 1;
         gameObject.GetComponent<GameBehavior>().UpdatePar();
         title = GameObject.Find("Title").GetComponent<TextMeshProUGUI>();
-        title.text = (levelId) + ". " + levelName;
+        title.text = (levelData.id) + ". " + levelData.name;
 
         dialogue = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
         dialogueFrame = GameObject.Find("ImageDialogue").GetComponent<Image>();
 
-        dialogue.text = levelDialog;
+        dialogue.text = levelData.dialogue;
 
 
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
@@ -121,7 +121,7 @@ public class GameBehavior : MonoBehaviour
     {
         GameObject[] scoreTexts = GameObject.FindGameObjectsWithTag("ScoreText");
         TextMeshProUGUI scoreCommentText = GameObject.Find("ScoreComment").GetComponent<TextMeshProUGUI>();
-        switch (mapScore - levelPar)
+        switch (mapScore - levelData.par)
         {
             case (2):
                 scoreCommentText.text = "Double Bogey";
@@ -169,7 +169,7 @@ public class GameBehavior : MonoBehaviour
         foreach (GameObject parText in parTexts)
         {
             TextMeshProUGUI text = parText.GetComponent<TextMeshProUGUI>();
-            text.text = levelPar + "";
+            text.text = levelData.par + "";
         }
 
     }

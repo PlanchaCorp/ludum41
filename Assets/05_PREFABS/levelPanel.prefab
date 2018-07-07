@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 222226931538456202}
   - component: {fileID: 114436180003052642}
   - component: {fileID: 114805823517237088}
-  - component: {fileID: 114566198655280168}
   m_Layer: 5
   m_Name: Trophy
   m_TagString: Untagged
@@ -128,7 +127,7 @@ GameObject:
   - component: {fileID: 114506976644567542}
   - component: {fileID: 114241887820421768}
   m_Layer: 5
-  m_Name: levelPanel
+  m_Name: Dusty wind
   m_TagString: levelSelector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3790a0d4f22f740a2ad0e4af52ea4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
+  LevelData: {fileID: 11400000, guid: 05ce4a2cbb406424c83f14f587727221, type: 2}
 --- !u!114 &114352334013099248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -478,20 +477,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114566198655280168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1172347222700228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1085374e6ca2f3541a382c97d2bbe56f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emptyTrophy: {fileID: 21300000, guid: 84249c7b42ec8d448af697449dbfcdcc, type: 3}
-  silverTrophy: {fileID: 0}
-  goldTrophy: {fileID: 21300000, guid: 420395399de31664b9741f7eb9d951ad, type: 3}
 --- !u!114 &114612617347244306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -531,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyTrophy: {fileID: 21300000, guid: 84249c7b42ec8d448af697449dbfcdcc, type: 3}
-  silverTrophy: {fileID: 0}
+  silverTrophy: {fileID: 21300000, guid: c3b7df6621cd9814e88257a8de1e000a, type: 3}
   goldTrophy: {fileID: 21300000, guid: 420395399de31664b9741f7eb9d951ad, type: 3}
 --- !u!114 &114892046224162396
 MonoBehaviour:

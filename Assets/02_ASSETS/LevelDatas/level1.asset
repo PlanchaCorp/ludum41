@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: level1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   id: 1
-  name: Hole the day
+  name: Lonely Peak
   sceneName: Lv01
   par: 1
   score: 1

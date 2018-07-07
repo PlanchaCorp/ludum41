@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a338f52288eff478c619f4735558d3, type: 3}
   m_Name: level15
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  sceneName: 
-  par: 0
+  id: 15
+  name: Windy passage
+  sceneName: Lv15
+  par: 4
   score: 0
-  dialogue: 
+  dialogue: And giving me rights of old queens.
