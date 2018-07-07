@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: level13
   m_EditorClassIdentifier: 
   id: 13
-  name: Across the deep river
+  name: Fragments of the past
   sceneName: level13
   par: 4
   score: 0
-  dialogue: When you're feeling sad, go to the river
+  dialogue: Where they all fled faster than their old rocket ship
