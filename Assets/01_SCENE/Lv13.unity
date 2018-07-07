@@ -35447,16 +35447,31 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
+    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
+    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223323270922446816, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1033169574}
     - target: {fileID: 114806826635708080, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
       propertyPath: ball
@@ -35467,14 +35482,20 @@ Prefab:
       propertyPath: hole
       value: 
       objectReference: {fileID: 2048260225}
-    - target: {fileID: 223323270922446816, guid: 1ee43547345f51a43b5b98a19309bfb6,
+    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1033169574}
-    - target: {fileID: 1954038089379430, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
-      propertyPath: m_IsActive
+      propertyPath: m_havePropertiesChanged
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224735260204370368, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 40.300003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
@@ -36895,6 +36916,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1033169574}
+    - target: {fileID: 1061462584117288, guid: ef16579f534592048babac4c1d0a6a9e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef16579f534592048babac4c1d0a6a9e, type: 2}
   m_IsPrefabParent: 0
