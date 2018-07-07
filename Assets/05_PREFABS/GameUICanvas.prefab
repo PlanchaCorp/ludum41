@@ -342,6 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e960429fcbabd1f42a86818a3668f7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mutedSprite: {fileID: 21300000, guid: 8703ed0bd1cef7b4a9e5c58f1c49d56e, type: 3}
+  unmutedSprite: {fileID: 21300000, guid: 74d2640989045344a8c6de1a83b642de, type: 3}
 --- !u!114 &114348402632590724
 MonoBehaviour:
   m_ObjectHideFlags: 1
