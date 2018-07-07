@@ -13,6 +13,7 @@ public class ScriptMenuUI : MonoBehaviour
 
     public void Start()
     {
+        RefreshMuteButton();
     }
 
     public void Update()
@@ -22,7 +23,6 @@ public class ScriptMenuUI : MonoBehaviour
             quit();
         }
     }
-
 
     public void loadScene(string nameScene)
     {
@@ -43,6 +43,16 @@ public class ScriptMenuUI : MonoBehaviour
         SelectedLevelPanel.SetActive(false);
     }
 
+    private void RefreshMuteButton()
+    {
+        GameObject music = GameObject.FindGameObjectWithTag("Music");
+        Image muteSprite = GameObject.FindGameObjectWithTag("MuteButton").GetComponent<Image>();
+        if (muteSprite != null && music != null)
+        {
+            Sprite sprite = music.GetComponent<BackgroundMusic>().GetCurrentMuteSprite();
+            muteSprite.sprite = sprite;
+        }
+    }
     public void ToggleMute()
     {
         GameObject music = GameObject.FindGameObjectWithTag("Music");
