@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 114506976644567542}
   - component: {fileID: 114241887820421768}
   m_Layer: 5
-  m_Name: levelPanel
+  m_Name: Scorched land
   m_TagString: levelSelector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3790a0d4f22f740a2ad0e4af52ea4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: 796323d36fa41824eab72453d723e477, type: 2}
+  LevelData: {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
 --- !u!114 &114352334013099248
 MonoBehaviour:
   m_ObjectHideFlags: 1

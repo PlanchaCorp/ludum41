@@ -75,6 +75,7 @@ public class GameBehavior : MonoBehaviour
 
 
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
+        Resume();
     }
 
     void Update()
