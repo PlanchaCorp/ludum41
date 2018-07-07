@@ -9261,11 +9261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbe85fa10312624dad3464cc6a887fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  levelId: 18
-  levelName: Dusty wind
-  levelDialog: Insert lorem ipsum here
-  levelPar: 8
+  levelData: {fileID: 11400000, guid: 05ce4a2cbb406424c83f14f587727221, type: 2}
 --- !u!114 &561509779
 MonoBehaviour:
   m_ObjectHideFlags: 0

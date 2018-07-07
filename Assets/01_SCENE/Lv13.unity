@@ -36930,11 +36930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbe85fa10312624dad3464cc6a887fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  levelId: 13
-  levelName: Fragments of the past
-  levelDialog: Insert lorem ipsum here
-  levelPar: 10
+  levelData: {fileID: 11400000, guid: f7e25a15d9dfae543837e1bf96a1656e, type: 2}
 --- !u!114 &1559275759
 MonoBehaviour:
   m_ObjectHideFlags: 0

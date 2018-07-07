@@ -46778,11 +46778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbe85fa10312624dad3464cc6a887fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  levelId: 15
-  levelName: windy passage
-  levelDialog: Insert lorem ipsum here
-  levelPar: 4
+  levelData: {fileID: 11400000, guid: fb41a9190b46b154d8df1550def90a44, type: 2}
 --- !u!114 &1977953588
 MonoBehaviour:
   m_ObjectHideFlags: 0
