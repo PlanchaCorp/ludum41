@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 114506976644567542}
   - component: {fileID: 114241887820421768}
   m_Layer: 5
-  m_Name: levelPanel
+  m_Name: Dusty wind
   m_TagString: levelSelector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
