@@ -22,9 +22,14 @@ public class menuBeaviour : MonoBehaviour {
 
     }
 
+    public void Pause()
+    {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().SetPause();
+    }
+
     public void Unpause()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().ChangePauseState(false);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().Resume();
     }
 
     public void GoToMenu()

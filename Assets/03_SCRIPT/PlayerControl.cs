@@ -87,7 +87,7 @@ public class PlayerControl : MonoBehaviour {
             PositionArrow(Input.mousePosition, shootingTime);
         }
         // Handle actions if actions are available
-        if (!PlayerIsMoving() && !isTeleporting && !GameBehavior.IsPaused() &&
+        if (!PlayerIsMoving() && !isTeleporting && !GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IsPaused() &&
             !GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBehavior>().IsDialogPrinted())
         {
             StartCoroutine(HandleActions());
