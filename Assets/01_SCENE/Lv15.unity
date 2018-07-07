@@ -46735,7 +46735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData: {fileID: 0}
   levelId: 15
-  levelName: Dusty passage
+  levelName: windy passage
   levelDialog: Insert lorem ipsum here
   levelPar: 4
 --- !u!114 &1977953588

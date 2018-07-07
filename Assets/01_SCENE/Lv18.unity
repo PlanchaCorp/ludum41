@@ -9263,7 +9263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData: {fileID: 0}
   levelId: 18
-  levelName: Windy caves
+  levelName: Dusty wind
   levelDialog: Insert lorem ipsum here
   levelPar: 8
 --- !u!114 &561509779
