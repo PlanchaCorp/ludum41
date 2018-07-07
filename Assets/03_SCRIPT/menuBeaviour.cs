@@ -16,8 +16,10 @@ public class menuBeaviour : MonoBehaviour {
     public void Replay()
     {
         this.GetComponentInParent<Canvas>().enabled  = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+
     }
 
     public void Pause()
