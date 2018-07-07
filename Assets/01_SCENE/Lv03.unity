@@ -12068,10 +12068,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 822dd8550d7844c4aa35378750ce6c35, type: 2}
-  levelId: 3
-  levelName: Scorched land
-  levelDialog: I ought to only golf in this world of nightmare.
-  levelPar: 3
 --- !u!114 &1314817467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12122,11 +12118,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
---- !u!1 &1336126371 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1666889102727194, guid: 08b6c1c5c14abf543ad168b9e0a1a228,
-    type: 2}
-  m_PrefabInternal: {fileID: 1532518409}
 --- !u!1 &1354601816
 GameObject:
   m_ObjectHideFlags: 0
@@ -37412,115 +37403,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114806826635708080, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: ball
-      value: 
-      objectReference: {fileID: 2144388854}
-    - target: {fileID: 114806826635708080, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: hole
-      value: 
-      objectReference: {fileID: 1336126371}
-    - target: {fileID: 223323270922446816, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 2144388853}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_text
-      value: 3. Scorched land
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.characterCount
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.spaceCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.wordCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_text
-      value: I ought to only golf in this world of nightmare.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.characterCount
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.spaceCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.wordCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954038089379430, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_fontSize
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.lineCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 224278093231159730, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 224278093231159730, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 85
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
   m_IsPrefabParent: 0
@@ -39079,10 +38961,5 @@ Prefab:
 --- !u!20 &2144388853 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20216772669085890, guid: d75adff0d6c74d4478bfc9c208d36697,
-    type: 2}
-  m_PrefabInternal: {fileID: 2144388851}
---- !u!1 &2144388854 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1667111811316032, guid: d75adff0d6c74d4478bfc9c208d36697,
     type: 2}
   m_PrefabInternal: {fileID: 2144388851}

@@ -23310,16 +23310,31 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
+    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
+    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223323270922446816, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 810892862}
     - target: {fileID: 114806826635708080, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
       propertyPath: ball
@@ -23330,63 +23345,14 @@ Prefab:
       propertyPath: hole
       value: 
       objectReference: {fileID: 1077563276}
-    - target: {fileID: 223323270922446816, guid: 1ee43547345f51a43b5b98a19309bfb6,
+    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 810892862}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_text
-      value: 6. Rock bottom
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.characterCount
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.spaceCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.wordCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.lineCount
+      propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114226943598703208, guid: 1ee43547345f51a43b5b98a19309bfb6,
+    - target: {fileID: 114589912871204396, guid: 1ee43547345f51a43b5b98a19309bfb6,
         type: 2}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_text
-      value: I ought to only golf, now that mad men are gone.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.characterCount
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.spaceCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114655482843995596, guid: 1ee43547345f51a43b5b98a19309bfb6,
-        type: 2}
-      propertyPath: m_textInfo.wordCount
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954038089379430, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
-      propertyPath: m_IsActive
+      propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
