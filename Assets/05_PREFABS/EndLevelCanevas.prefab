@@ -611,6 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e960429fcbabd1f42a86818a3668f7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mutedSprite: {fileID: 0}
+  unmutedSprite: {fileID: 0}
 --- !u!114 &114390095058100110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1538,7 +1540,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1061462584117288}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
@@ -1684,7 +1686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 175, y: 66.5}
+  m_AnchoredPosition: {x: 0, y: 66.5}
   m_SizeDelta: {x: 149.1, y: 59.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224485838034763582
@@ -1703,7 +1705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 66.5}
+  m_AnchoredPosition: {x: 175, y: 66.5}
   m_SizeDelta: {x: 149.1, y: 59.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224491267056456240
