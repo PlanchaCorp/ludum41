@@ -36568,6 +36568,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1721981807 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1666889102727194, guid: 08b6c1c5c14abf543ad168b9e0a1a228,
+    type: 2}
+  m_PrefabInternal: {fileID: 1532518409}
 --- !u!1 &1726435606
 GameObject:
   m_ObjectHideFlags: 0
@@ -36953,6 +36958,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1800590860 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1667111811316032, guid: d75adff0d6c74d4478bfc9c208d36697,
+    type: 2}
+  m_PrefabInternal: {fileID: 2144388851}
 --- !u!1 &1823436608
 GameObject:
   m_ObjectHideFlags: 0
@@ -37403,6 +37413,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806826635708080, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1800590860}
+    - target: {fileID: 114806826635708080, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: hole
+      value: 
+      objectReference: {fileID: 1721981807}
+    - target: {fileID: 223323270922446816, guid: 1ee43547345f51a43b5b98a19309bfb6,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2144388853}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ee43547345f51a43b5b98a19309bfb6, type: 2}
   m_IsPrefabParent: 0
