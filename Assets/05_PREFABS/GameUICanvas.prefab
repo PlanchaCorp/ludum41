@@ -237,7 +237,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 1. Hole the day
+  m_text: 3. Scorched land
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f19683e37dab7f498e80283e507d49d, type: 2}
   m_sharedMaterial: {fileID: 21800032830589816, guid: 9f19683e37dab7f498e80283e507d49d,
@@ -305,10 +305,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114226943598703208}
-    characterCount: 15
+    characterCount: 16
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -440,7 +440,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 10
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f19683e37dab7f498e80283e507d49d, type: 2}
   m_sharedMaterial: {fileID: 21800032830589816, guid: 9f19683e37dab7f498e80283e507d49d,
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_margin: {x: 3.771321, y: 0, z: 18.051315, w: -5.664592}
   m_textInfo:
     textComponent: {fileID: 114589912871204396}
-    characterCount: 2
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -601,7 +601,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You can call me Horfel, the last remaining one.
+  m_text: I ought to only golf in this world of nightmare.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7da17c019a66ec242a7cf43348e71354, type: 2}
   m_sharedMaterial: {fileID: 21364601079238742, guid: 7da17c019a66ec242a7cf43348e71354,
@@ -629,12 +629,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18.2
-  m_fontSizeBase: 10
+  m_fontSize: 23.05
+  m_fontSizeBase: 24.51
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 9.9
+  m_fontSizeMax: 32
   m_fontStyle: 0
   m_textAlignment: 257
   m_isAlignmentEnumConverted: 1
@@ -666,15 +666,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 6.412236, y: 0.9160292, z: 6.412298, w: 0}
   m_textInfo:
     textComponent: {fileID: 114655482843995596}
-    characterCount: 47
+    characterCount: 48
     spriteCount: 0
-    spaceCount: 8
-    wordCount: 9
+    spaceCount: 9
+    wordCount: 10
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 1
@@ -1096,8 +1096,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 20.4}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 2.9}
+  m_SizeDelta: {x: 200, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224380716601104204
 RectTransform:
@@ -1139,7 +1139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 254.3, y: 40.3}
+  m_AnchoredPosition: {x: 254.3, y: 40.300003}
   m_SizeDelta: {x: 111.28, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224806586140990950
@@ -1148,7 +1148,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025419107178856}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.039466374, w: 0.9992209}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 90, y: 90, z: 1}
   m_Children: []
