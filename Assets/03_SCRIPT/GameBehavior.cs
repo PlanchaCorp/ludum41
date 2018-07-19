@@ -102,12 +102,17 @@ public class GameBehavior : MonoBehaviour
     public void SetPause()
     {
         isPaused = true;
+        title.enabled = true;
         Time.timeScale = 0;
         pauseCanvas.enabled = true;
     }
     public void Resume()
     {
         isPaused = false;
+        if (!dialogue.enabled)
+        {
+            title.enabled = false;
+        }
         Time.timeScale = 1;
         pauseCanvas.enabled = false;
     }
