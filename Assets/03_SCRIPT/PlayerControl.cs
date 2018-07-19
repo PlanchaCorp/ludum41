@@ -83,7 +83,7 @@ public class PlayerControl : MonoBehaviour {
         // Position and fill shoot arrow
         if (mouseDownTime > 0)
         {
-            shootingTime = (Time.time - mouseDownTime) * 10;
+            shootingTime = (Time.time - mouseDownTime) * 7;
             PositionArrow(Input.mousePosition, shootingTime);
         }
         // Handle actions if actions are available
